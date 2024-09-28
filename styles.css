@@ -7,10 +7,19 @@
 }
 
 /* Body Styling */
+html,
+body {
+    height: 100%;
+    /* Make sure html and body take the full height */
+}
+
 body {
     background-color: #f4f4f4;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    /* Arrange elements vertically */
 }
 
 /* Header styling */
@@ -35,7 +44,34 @@ main {
     max-width: 900px;
     /* Limit the main content width */
     margin: 0 auto;
+    /* Center the main content */
     padding: 20px;
+    flex: 1;
+    /* Allow main to grow and fill the available space */
+}
+
+.topics-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.topic-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: #333;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Section Styling */
@@ -96,14 +132,20 @@ a:hover {
     text-decoration: underline;
 }
 
+.homePage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
 .home {
     background-color: darkseagreen;
     cursor: pointer;
     padding: 10px 45px;
     border: none;
-    min-width: 70%;
+
     border-radius: 5px;
-    margin-left: 50px;
     color: white;
     font-weight: 800;
 }
@@ -118,7 +160,8 @@ footer {
     padding: 10px;
     background-color: #6200ea;
     color: white;
-    margin-top: 40px;
+    margin: 0;
+    /* Remove margin */
 }
 
 /* Media Query for Tablets */
@@ -145,6 +188,11 @@ footer {
 
     pre {
         padding: 10px;
+    }
+
+    .topic-card {
+        width: 100%;
+        margin-bottom: 10px;
     }
 }
 
