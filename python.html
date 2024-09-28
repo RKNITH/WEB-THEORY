@@ -1,0 +1,1602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Basics</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Python Basics</h1>
+    </header>
+    <main>
+        <!-- Section 1: Python Syntax and Structure -->
+        <section>
+            <h2>Python Syntax and Structure</h2>
+            <p>Python is known for its clean and easy-to-read syntax. Indentation plays a significant role in defining
+                the structure of code blocks like functions, loops, and conditionals.</p>
+        </section>
+
+        <!-- Section 2: Comments in Python -->
+        <section>
+            <h2>Comments in Python</h2>
+            <p>Comments are used to explain code and are ignored by the Python interpreter. Single-line comments start
+                with a `#`, and multi-line comments can be enclosed in triple quotes.</p>
+        </section>
+
+        <!-- Section 3: Variables and Data Types -->
+        <section>
+            <h2>Variables and Data Types</h2>
+            <p>In Python, variables are dynamically typed, and you don't need to declare the type explicitly. Common
+                data types include integers, floats, strings, and booleans.</p>
+        </section>
+
+        <!-- Section 4: Input and Output -->
+        <section>
+            <h2>Input and Output</h2>
+            <p>Python uses the `input()` function to take input from the user and the `print()` function to output
+                results. Example:</p>
+            <pre><code>
+# Taking input and printing output
+name = input("Enter your name: ")
+print("Hello, " + name + "!")
+            </code></pre>
+        </section>
+
+        <!-- Section 5: Basic Operators -->
+        <section>
+            <h2>Basic Operators</h2>
+            <p>Python supports various operators including arithmetic, comparison, logical, and bitwise operators.
+                Example of arithmetic and comparison operators:</p>
+            <pre><code>
+# Arithmetic Operators
+a = 10
+b = 5
+print(a + b)  # Output: 15
+print(a - b)  # Output: 5
+print(a * b)  # Output: 50
+print(a / b)  # Output: 2.0
+
+# Comparison Operators
+print(a > b)  # Output: True
+print(a == b)  # Output: False
+            </code></pre>
+        </section>
+
+        <!-- Section 6: Type Casting -->
+        <section>
+            <h2>Type Casting</h2>
+            <p>Type casting allows you to convert one data type to another. Python provides built-in functions like
+                `int()`, `float()`, `str()` for type conversion. Example:</p>
+            <pre><code>
+# Type Casting
+x = "100"
+y = int(x)  # Convert string to integer
+z = float(y)  # Convert integer to float
+print(y)  # Output: 100
+print(z)  # Output: 100.0
+            </code></pre>
+        </section>
+
+        <!-- Section 1: Control Flow -->
+        <section>
+            <h2>Control Flow</h2>
+            <p>Control flow refers to the order in which the program's statements are executed. Python provides various
+                ways to control the flow of execution based on conditions or loops.</p>
+        </section>
+
+        <!-- Section 2: Conditional Statements (if, elif, else) -->
+        <section>
+            <h2>Conditional Statements (if, elif, else)</h2>
+            <p>Conditional statements allow the program to execute certain blocks of code based on whether a condition
+                is true or false.</p>
+            <pre><code>
+# Conditional Statements Example
+x = 10
+if x > 5:
+    print("x is greater than 5")
+elif x == 5:
+    print("x is equal to 5")
+else:
+    print("x is less than 5")
+            </code></pre>
+        </section>
+
+        <!-- Section 3: Loops (for, while) -->
+        <section>
+            <h2>Loops (for, while)</h2>
+            <p>Loops are used to repeatedly execute a block of code. Python provides two types of loops: `for` and
+                `while` loops.</p>
+            <pre><code>
+# For Loop Example
+for i in range(5):
+    print(i)
+
+# While Loop Example
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+            </code></pre>
+        </section>
+
+        <!-- Section 4: break, continue, pass -->
+        <section>
+            <h2>break, continue, pass</h2>
+            <p>In loops, `break` exits the loop, `continue` skips the current iteration, and `pass` is a placeholder
+                used when no action is required.</p>
+            <pre><code>
+# Break, Continue, Pass Example
+for i in range(5):
+    if i == 3:
+        break  # Exit the loop when i is 3
+    elif i == 1:
+        continue  # Skip the rest of the code for this iteration
+    else:
+        pass  # Do nothing
+    print(i)
+            </code></pre>
+        </section>
+
+        <!-- Section 5: List Comprehensions -->
+        <section>
+            <h2>List Comprehensions</h2>
+            <p>List comprehensions provide a concise way to create lists in Python using a single line of code, often as
+                an alternative to loops.</p>
+            <pre><code>
+# List Comprehension Example
+squares = [x**2 for x in range(10)]
+print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+            </code></pre>
+        </section>
+
+        <!-- Section 6: Functions -->
+        <section>
+            <h2>Functions</h2>
+            <p>Functions are reusable blocks of code that perform a specific task. Functions can take inputs (arguments)
+                and return outputs.</p>
+        </section>
+
+        <!-- Section 7: Defining and Calling Functions -->
+        <section>
+            <h2>Defining and Calling Functions</h2>
+            <p>In Python, functions are defined using the `def` keyword. You can call a function by using its name
+                followed by parentheses.</p>
+            <pre><code>
+# Function Definition and Call
+def greet(name):
+    return "Hello, " + name
+
+print(greet("Alice"))  # Output: Hello, Alice
+            </code></pre>
+        </section>
+
+        <!-- Section 8: Function Arguments (positional, keyword, default, variable-length) -->
+        <section>
+            <h2>Function Arguments (Positional, Keyword, Default, Variable-length)</h2>
+            <p>Functions can accept various types of arguments:</p>
+            <ul>
+                <li><strong>Positional arguments</strong> are required and passed in order.</li>
+                <li><strong>Keyword arguments</strong> are passed with a key-value pair.</li>
+                <li><strong>Default arguments</strong> have default values if not provided by the caller.</li>
+                <li><strong>Variable-length arguments</strong> allow passing an arbitrary number of arguments using
+                    `*args` and `**kwargs`.</li>
+            </ul>
+            <pre><code>
+# Function with Different Types of Arguments
+def display_info(name, age=25, *args, **kwargs):
+    print(f"Name: {name}, Age: {age}")
+    print("Args:", args)
+    print("Kwargs:", kwargs)
+
+display_info("John", 30, "Python", "Developer", location="USA")
+# Output:
+# Name: John, Age: 30
+# Args: ('Python', 'Developer')
+# Kwargs: {'location': 'USA'}
+            </code></pre>
+        </section>
+
+        <!-- Section 9: Return Statements -->
+        <section>
+            <h2>Return Statements</h2>
+            <p>The `return` statement is used to exit a function and return a value to the caller.</p>
+            <pre><code>
+# Return Statement Example
+def add(a, b):
+    return a + b
+
+result = add(5, 3)
+print(result)  # Output: 8
+            </code></pre>
+        </section>
+
+        <!-- Section 10: Lambda Functions -->
+        <section>
+            <h2>Lambda Functions</h2>
+            <p>Lambda functions are anonymous functions defined using the `lambda` keyword. They are used for short,
+                simple operations.</p>
+            <pre><code>
+# Lambda Function Example
+add = lambda x, y: x + y
+print(add(3, 5))  # Output: 8
+            </code></pre>
+        </section>
+
+        <!-- Section 11: Recursion -->
+        <section>
+            <h2>Recursion</h2>
+            <p>Recursion occurs when a function calls itself to solve smaller instances of the same problem. A base case
+                is required to avoid infinite recursion.</p>
+            <pre><code>
+# Recursion Example: Factorial Calculation
+def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+print(factorial(5))  # Output: 120
+            </code></pre>
+        </section>
+
+        <!-- Section 12: Scope of Variables (local, global) -->
+        <section>
+            <h2>Scope of Variables (Local, Global)</h2>
+            <p>Variables in Python have either local or global scope. A global variable is accessible throughout the
+                program, while a local variable is only accessible within a function.</p>
+            <pre><code>
+# Scope of Variables Example
+x = 10  # Global variable
+
+def my_function():
+    x = 5  # Local variable
+    print("Local x:", x)
+
+my_function()  # Output: Local x: 5
+print("Global x:", x)  # Output: Global x: 10
+            </code></pre>
+        </section>
+
+        <!-- Section 13: *args and **kwargs -->
+        <section>
+            <h2>*args and **kwargs</h2>
+            <p>`*args` allows passing a variable number of positional arguments, while `**kwargs` allows passing a
+                variable number of keyword arguments.</p>
+            <pre><code>
+# *args and **kwargs Example
+def display(*args, **kwargs):
+    print("Positional arguments:", args)
+    print("Keyword arguments:", kwargs)
+
+display(1, 2, 3, name="Alice", age=25)
+# Output:
+# Positional arguments: (1, 2, 3)
+# Keyword arguments: {'name': 'Alice', 'age': 25}
+            </code></pre>
+        </section>
+        <!-- Section 1: Data Structures -->
+        <section>
+            <h2>Data Structures</h2>
+            <p>Python provides several built-in data structures that allow efficient storage and manipulation of data.
+                These include lists, tuples, sets, dictionaries, and strings.</p>
+        </section>
+
+        <!-- Section 2: Lists -->
+        <section>
+            <h2>Lists</h2>
+            <p>Lists are mutable, ordered collections of items. Elements can be added, removed, or changed in a list.
+            </p>
+            <pre><code>
+# List Example
+fruits = ["apple", "banana", "cherry"]
+fruits.append("orange")  # Adding an element
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']
+            </code></pre>
+        </section>
+
+        <!-- Section 3: Tuples -->
+        <section>
+            <h2>Tuples</h2>
+            <p>Tuples are immutable, ordered collections of items. Once created, the elements of a tuple cannot be
+                changed.</p>
+            <pre><code>
+# Tuple Example
+coordinates = (10, 20)
+print(coordinates)  # Output: (10, 20)
+            </code></pre>
+        </section>
+
+        <!-- Section 4: Sets -->
+        <section>
+            <h2>Sets</h2>
+            <p>Sets are unordered collections of unique elements. They do not allow duplicates and support operations
+                like union, intersection, and difference.</p>
+            <pre><code>
+# Set Example
+numbers = {1, 2, 3, 4}
+numbers.add(5)
+print(numbers)  # Output: {1, 2, 3, 4, 5}
+            </code></pre>
+        </section>
+
+        <!-- Section 5: Dictionaries -->
+        <section>
+            <h2>Dictionaries</h2>
+            <p>Dictionaries are collections of key-value pairs. Keys must be unique, and values can be accessed using
+                their corresponding keys.</p>
+            <pre><code>
+# Dictionary Example
+student = {"name": "John", "age": 25, "grade": "A"}
+print(student["name"])  # Output: John
+            </code></pre>
+        </section>
+
+        <!-- Section 6: Strings and String Manipulation -->
+        <section>
+            <h2>Strings and String Manipulation</h2>
+            <p>Strings are sequences of characters. Python provides various methods for manipulating strings, such as
+                concatenation, slicing, and formatting.</p>
+            <pre><code>
+# String Manipulation Example
+message = "Hello, World!"
+print(message.upper())  # Output: HELLO, WORLD!
+print(message[0:5])  # Output: Hello
+            </code></pre>
+        </section>
+
+        <!-- Section 7: List Comprehension and Generator Expressions -->
+        <section>
+            <h2>List Comprehension and Generator Expressions</h2>
+            <p>List comprehensions provide a concise way to create lists, while generator expressions allow the creation
+                of iterators using similar syntax.</p>
+            <pre><code>
+# List Comprehension Example
+squares = [x**2 for x in range(10)]
+print(squares)  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+# Generator Expression Example
+squares_gen = (x**2 for x in range(10))
+print(list(squares_gen))  # Output: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+            </code></pre>
+        </section>
+
+        <!-- Section 8: Object-Oriented Programming (OOP) -->
+        <section>
+            <h2>Object-Oriented Programming (OOP)</h2>
+            <p>OOP is a programming paradigm that uses objects and classes to structure code. Python supports OOP
+                features such as inheritance, polymorphism, encapsulation, and abstraction.</p>
+        </section>
+
+        <!-- Section 9: Classes and Objects -->
+        <section>
+            <h2>Classes and Objects</h2>
+            <p>Classes are blueprints for creating objects. Objects are instances of a class, containing attributes and
+                methods.</p>
+            <pre><code>
+# Class and Object Example
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        return f"{self.name} says woof!"
+
+my_dog = Dog("Buddy", "Golden Retriever")
+print(my_dog.bark())  # Output: Buddy says woof!
+            </code></pre>
+        </section>
+
+        <!-- Section 10: __init__ Method (Constructor) -->
+        <section>
+            <h2>__init__ Method (Constructor)</h2>
+            <p>The `__init__` method is a special method used to initialize an object's attributes when the object is
+                created. It is also known as the constructor.</p>
+            <pre><code>
+# Constructor Example
+class Car:
+    def __init__(self, model, year):
+        self.model = model
+        self.year = year
+
+my_car = Car("Tesla Model S", 2021)
+print(my_car.model)  # Output: Tesla Model S
+            </code></pre>
+        </section>
+
+        <!-- Section 11: Instance Methods and Attributes -->
+        <section>
+            <h2>Instance Methods and Attributes</h2>
+            <p>Instance methods are functions defined within a class that operate on the object's attributes. Instance
+                attributes are specific to each object.</p>
+            <pre><code>
+# Instance Methods and Attributes Example
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius**2
+
+my_circle = Circle(5)
+print(my_circle.area())  # Output: 78.5
+            </code></pre>
+        </section>
+
+        <!-- Section 12: Class Methods and Static Methods -->
+        <section>
+            <h2>Class Methods and Static Methods</h2>
+            <p>Class methods are bound to the class, not the instance, and are used to modify class attributes. Static
+                methods do not access any class or instance data and are used for utility functions.</p>
+            <pre><code>
+# Class and Static Methods Example
+class Math:
+    @staticmethod
+    def add(a, b):
+        return a + b
+
+    @classmethod
+    def subtract(cls, a, b):
+        return a - b
+
+print(Math.add(5, 3))  # Output: 8
+print(Math.subtract(5, 3))  # Output: 2
+            </code></pre>
+        </section>
+
+        <!-- Section 13: Inheritance -->
+        <section>
+            <h2>Inheritance</h2>
+            <p>Inheritance allows one class (child class) to inherit attributes and methods from another class (parent
+                class), promoting code reuse.</p>
+            <pre><code>
+# Inheritance Example
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"{self.name} makes a sound."
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} barks."
+
+my_dog = Dog("Buddy")
+print(my_dog.speak())  # Output: Buddy barks.
+            </code></pre>
+        </section>
+
+        <!-- Section 14: Polymorphism -->
+        <section>
+            <h2>Polymorphism</h2>
+            <p>Polymorphism allows different classes to be used interchangeably through a common interface.</p>
+            <pre><code>
+# Polymorphism Example
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} meows."
+
+animals = [Dog("Buddy"), Cat("Whiskers")]
+for animal in animals:
+    print(animal.speak())
+# Output:
+# Buddy barks.
+# Whiskers meows.
+            </code></pre>
+        </section>
+
+        <!-- Section 15: Encapsulation and Abstraction -->
+        <section>
+            <h2>Encapsulation and Abstraction</h2>
+            <p>Encapsulation hides the internal state of an object and only allows modification through methods.
+                Abstraction hides complex implementation details from the user.</p>
+            <pre><code>
+# Encapsulation Example
+class Account:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def get_balance(self):
+        return self.__balance
+
+account = Account(100)
+account.deposit(50)
+print(account.get_balance())  # Output: 150
+            </code></pre>
+        </section>
+        <!-- Section 16: Method Overriding -->
+        <section>
+            <h2>Method Overriding</h2>
+            <p>Method overriding allows a child class to provide a specific implementation of a method that is already
+                defined in its parent class.</p>
+            <pre><code>
+# Method Overriding Example
+class Animal:
+    def speak(self):
+        return "Animal makes a sound."
+
+class Dog(Animal):
+    def speak(self):
+        return "Dog barks."
+
+my_pet = Dog()
+print(my_pet.speak())  # Output: Dog barks
+    </code></pre>
+        </section>
+
+        <!-- Section 17: self and super() -->
+        <section>
+            <h2>self and super()</h2>
+            <p>The <code>self</code> keyword is used to represent the instance of the class, allowing access to the
+                instance's attributes and methods. The <code>super()</code> function is used to call a method from the
+                parent class.</p>
+            <pre><code>
+# self and super() Example
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return f"{self.name} makes a sound."
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)  # Calls the parent class's __init__
+        self.breed = breed
+
+    def speak(self):
+        return f"{self.name} the {self.breed} barks."
+
+my_dog = Dog("Buddy", "Golden Retriever")
+print(my_dog.speak())  # Output: Buddy the Golden Retriever barks.
+    </code></pre>
+        </section>
+
+        <!-- Section 18: Dunder (Magic) Methods -->
+        <section>
+            <h2>Dunder (Magic) Methods</h2>
+            <p>Dunder (double underscore) methods, also called magic methods, are special methods in Python that allow
+                objects to implement or customize behavior for built-in operations such as addition, string
+                representation, etc.</p>
+            <h3>Examples of Common Dunder Methods</h3>
+            <ul>
+                <li><code>__str__</code>: Provides a human-readable string representation of the object.</li>
+                <li><code>__repr__</code>: Provides an unambiguous string representation of the object, useful for
+                    debugging.</li>
+                <li><code>__add__</code>: Defines behavior for the "+" operator.</li>
+            </ul>
+            <pre><code>
+# Dunder (Magic) Methods Example
+class Book:
+    def __init__(self, title, author, pages):
+        self.title = title
+        self.author = author
+        self.pages = pages
+
+    def __str__(self):
+        return f"'{self.title}' by {self.author}"
+
+    def __repr__(self):
+        return f"Book(title='{self.title}', author='{self.author}', pages={self.pages})"
+
+    def __add__(self, other):
+        return self.pages + other.pages  # Combine page counts of two books
+
+book1 = Book("1984", "George Orwell", 328)
+book2 = Book("Brave New World", "Aldous Huxley", 288)
+
+# __str__ Example
+print(book1)  # Output: '1984' by George Orwell
+
+# __repr__ Example
+print(repr(book1))  # Output: Book(title='1984', author='George Orwell', pages=328)
+
+# __add__ Example
+total_pages = book1 + book2
+print(total_pages)  # Output: 616
+    </code></pre>
+        </section>
+        <!-- Section 19: Exception Handling -->
+        <section>
+            <h2>Exception Handling</h2>
+            <p>Exception handling in Python is done using <code>try</code>, <code>except</code>, and
+                <code>finally</code> blocks. It helps to handle errors gracefully without breaking the program flow.
+            </p>
+        </section>
+
+        <!-- Subsection: Try-Except Blocks -->
+        <section>
+            <h3>Try-Except Blocks</h3>
+            <p>A <code>try</code> block allows you to test a block of code for errors, and an <code>except</code> block
+                lets you handle the error if it occurs.</p>
+            <pre><code>
+# Try-Except Example
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+    </code></pre>
+            <p>In this example, the division by zero raises a <code>ZeroDivisionError</code>, which is caught by the
+                <code>except</code> block.
+            </p>
+        </section>
+
+        <!-- Subsection: Finally Clause -->
+        <section>
+            <h3>Finally Clause</h3>
+            <p>The <code>finally</code> block, if specified, will be executed no matter if an exception is raised or
+                not. It is typically used for cleanup actions.</p>
+            <pre><code>
+# Try-Except-Finally Example
+try:
+    file = open("example.txt", "r")
+    data = file.read()
+except FileNotFoundError:
+    print("Error: File not found.")
+finally:
+    print("Executing finally block.")
+    file.close()  # Ensuring the file is closed
+    </code></pre>
+            <p>In this example, the <code>finally</code> block is used to close the file, ensuring that the resource is
+                properly cleaned up.</p>
+        </section>
+
+        <!-- Subsection: Raising Exceptions -->
+        <section>
+            <h3>Raising Exceptions</h3>
+            <p>You can use the <code>raise</code> statement to raise an exception if a certain condition occurs in your
+                program.</p>
+            <pre><code>
+# Raising an Exception Example
+def check_age(age):
+    if age < 18:
+        raise ValueError("Age must be 18 or above.")
+    return "Access granted."
+
+try:
+    print(check_age(16))
+except ValueError as e:
+    print(f"Error: {e}")
+    </code></pre>
+            <p>In this example, if the age is below 18, a <code>ValueError</code> is raised with a custom message.</p>
+        </section>
+
+        <!-- Subsection: Custom Exceptions -->
+        <section>
+            <h3>Custom Exceptions</h3>
+            <p>In Python, you can create your own exceptions by deriving from the base <code>Exception</code> class.
+                Custom exceptions allow you to define error situations specific to your application.</p>
+            <pre><code>
+# Custom Exception Example
+class CustomError(Exception):
+    def __init__(self, message):
+        self.message = message
+        super().__init__(self.message)
+
+def test_custom_exception(value):
+    if value > 100:
+        raise CustomError("Value exceeds the allowed limit.")
+
+try:
+    test_custom_exception(150)
+except CustomError as e:
+    print(f"CustomError: {e}")
+    </code></pre>
+            <p>In this example, a custom exception <code>CustomError</code> is raised when a value exceeds the allowed
+                limit of 100.</p>
+        </section>
+        <!-- Section 20: File Handling -->
+        <section>
+            <h2>File Handling</h2>
+            <p>File handling in Python allows you to read, write, and manipulate files. Python provides built-in
+                functions for file operations, including support for different file formats like JSON and CSV.</p>
+        </section>
+
+        <!-- Subsection: Reading and Writing Files -->
+        <section>
+            <h3>Reading and Writing Files</h3>
+            <p>Files can be opened using the built-in <code>open()</code> function. You can either read from or write to
+                a file by specifying the correct file mode.</p>
+            <pre><code>
+# Reading and Writing Files Example
+# Writing to a file
+with open('example.txt', 'w') as file:
+    file.write('Hello, World!')
+
+# Reading from a file
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)  # Output: Hello, World!
+    </code></pre>
+            <p>In this example, the file <code>example.txt</code> is written to and read from using the
+                <code>open()</code> function with <code>write</code> and <code>read</code> modes.
+            </p>
+        </section>
+
+        <!-- Subsection: File Modes (r, w, a, r+, etc.) -->
+        <section>
+            <h3>File Modes (r, w, a, r+, etc.)</h3>
+            <p>Python supports several file modes:</p>
+            <ul>
+                <li><code>r</code>: Read (default mode, file must exist).</li>
+                <li><code>w</code>: Write (creates a new file or truncates an existing file).</li>
+                <li><code>a</code>: Append (writes data at the end of the file).</li>
+                <li><code>r+</code>: Read and write (file must exist).</li>
+            </ul>
+            <pre><code>
+# File Mode Example
+# Append mode (a)
+with open('example.txt', 'a') as file:
+    file.write('\nAppending new content.')
+
+# Read-Write mode (r+)
+with open('example.txt', 'r+') as file:
+    content = file.read()
+    file.write('\nAdding more content after reading.')
+    </code></pre>
+            <p>In this example, different file modes are demonstrated to show how to append and both read/write to the
+                same file.</p>
+        </section>
+
+        <!-- Subsection: Working with File Paths (os and pathlib) -->
+        <section>
+            <h3>Working with File Paths (os and pathlib)</h3>
+            <p>The <code>os</code> and <code>pathlib</code> modules allow for cross-platform handling of file paths.
+                <code>pathlib</code> is the modern approach, while <code>os</code> offers traditional path handling
+                methods.
+            </p>
+            <pre><code>
+import os
+from pathlib import Path
+
+# Using os module to get file path
+file_path = os.path.join('folder', 'example.txt')
+
+# Using pathlib module
+path = Path('folder') / 'example.txt'
+
+print(file_path)  # Output: folder/example.txt
+print(path)       # Output: folder/example.txt
+    </code></pre>
+            <p>Both <code>os</code> and <code>pathlib</code> are used here to construct file paths that work across
+                different operating systems.</p>
+        </section>
+
+        <!-- Subsection: File Context Managers (with statement) -->
+        <section>
+            <h3>File Context Managers (with statement)</h3>
+            <p>The <code>with</code> statement is used to automatically manage file resources, ensuring that files are
+                properly closed after operations are completed.</p>
+            <pre><code>
+# File Context Manager Example
+with open('example.txt', 'r') as file:
+    content = file.read()
+    print(content)  # Output: The content of example.txt
+
+# The file is automatically closed after the block is executed
+    </code></pre>
+            <p>In this example, the <code>with</code> statement handles file closing automatically, preventing potential
+                resource leaks.</p>
+        </section>
+
+        <!-- Subsection: JSON and CSV File Handling -->
+        <section>
+            <h3>JSON and CSV File Handling</h3>
+            <p>Python provides the <code>json</code> and <code>csv</code> modules for working with JSON and CSV files,
+                respectively.</p>
+
+            <h4>JSON File Handling</h4>
+            <pre><code>
+import json
+
+# Writing to a JSON file
+data = {"name": "Alice", "age": 25}
+with open('data.json', 'w') as json_file:
+    json.dump(data, json_file)
+
+# Reading from a JSON file
+with open('data.json', 'r') as json_file:
+    data = json.load(json_file)
+    print(data)  # Output: {'name': 'Alice', 'age': 25}
+    </code></pre>
+
+            <h4>CSV File Handling</h4>
+            <pre><code>
+import csv
+
+# Writing to a CSV file
+with open('data.csv', 'w', newline='') as csv_file:
+    writer = csv.writer(csv_file)
+    writer.writerow(['Name', 'Age'])
+    writer.writerow(['Bob', 30])
+
+# Reading from a CSV file
+with open('data.csv', 'r') as csv_file:
+    reader = csv.reader(csv_file)
+    for row in reader:
+        print(row)
+    </code></pre>
+            <p>In this example, the <code>json</code> module is used to read and write JSON data, while the
+                <code>csv</code> module handles CSV file operations.
+            </p>
+        </section>
+
+        <!-- Section 21: Regular Expressions -->
+        <section>
+            <h2>Regular Expressions (Regex)</h2>
+            <p>Regular expressions (regex) are sequences of characters that define search patterns. In Python, the
+                <code>re</code> module is used to work with regular expressions. It allows for complex string searching,
+                matching, and replacing operations.
+            </p>
+        </section>
+
+        <!-- Subsection: Introduction to re module -->
+        <section>
+            <h3>Introduction to <code>re</code> Module</h3>
+            <p>The <code>re</code> module in Python provides support for working with regular expressions. It includes
+                methods such as <code>search()</code>, <code>match()</code>, <code>findall()</code>, and
+                <code>sub()</code> for performing regex operations.
+            </p>
+            <pre><code>
+import re
+
+# Sample text
+text = "Python is amazing!"
+
+# Search for a pattern in the text
+match = re.search("Python", text)
+
+if match:
+    print("Pattern found:", match.group())
+    </code></pre>
+            <p>In this example, the <code>re.search()</code> function is used to search for the word "Python" in the
+                given text.</p>
+        </section>
+
+        <!-- Subsection: Pattern Matching with Regex -->
+        <section>
+            <h3>Pattern Matching with Regex</h3>
+            <p>Pattern matching is the process of searching for a specific sequence of characters within a string. Regex
+                patterns are defined using special characters like <code>^</code>, <code>$</code>, <code>.*</code>, etc.
+            </p>
+            <pre><code>
+# Pattern matching example
+pattern = r"\bPython\b"  # Word boundary to match the exact word 'Python'
+text = "I love Python programming."
+
+# Using re.search()
+match = re.search(pattern, text)
+if match:
+    print(f"Match found: {match.group()}")  # Output: Match found: Python
+    </code></pre>
+            <p>In this example, the pattern <code>\bPython\b</code> ensures that the word "Python" is matched exactly,
+                without partial matches.</p>
+        </section>
+
+        <!-- Subsection: Search, Match, and Replace Using Regex -->
+        <section>
+            <h3>Search, Match, and Replace Using Regex</h3>
+            <p>In regex, you can search for patterns, match them at the beginning of a string, and replace text using
+                regex functions like <code>search()</code>, <code>match()</code>, and <code>sub()</code>.</p>
+            <pre><code>
+# Using re.search()
+text = "The price is $100."
+pattern = r"\$\d+"  # Match dollar amount
+match = re.search(pattern, text)
+if match:
+    print("Search result:", match.group())  # Output: $100
+
+# Using re.match() to check from the start of the string
+pattern = r"\w+"
+match = re.match(pattern, "Python3 is powerful")
+if match:
+    print("Match result:", match.group())  # Output: Python3
+
+# Using re.sub() to replace a pattern
+new_text = re.sub(r"\d+", "XXX", "My number is 12345")
+print("After replacement:", new_text)  # Output: My number is XXX
+    </code></pre>
+            <p>In this example, <code>re.search()</code> is used to find a dollar amount, <code>re.match()</code> checks
+                if a string starts with a word, and <code>re.sub()</code> replaces digits with "XXX".</p>
+        </section>
+
+        <!-- Subsection: Common Regex Patterns (\d, \w, \s, etc.) -->
+        <section>
+            <h3>Common Regex Patterns</h3>
+            <p>There are several commonly used regex patterns that make matching specific types of characters easier:
+            </p>
+            <ul>
+                <li><code>\d</code>: Matches any digit (0-9).</li>
+                <li><code>\w</code>: Matches any word character (alphanumeric and underscore).</li>
+                <li><code>\s</code>: Matches any whitespace character (spaces, tabs, newlines).</li>
+                <li><code>\D</code>: Matches any non-digit character.</li>
+                <li><code>\W</code>: Matches any non-word character.</li>
+                <li><code>\S</code>: Matches any non-whitespace character.</li>
+            </ul>
+            <pre><code>
+# Common regex pattern examples
+text = "My number is 12345 and my code is AB12."
+
+# Match digits
+digits = re.findall(r"\d+", text)
+print("Digits found:", digits)  # Output: ['12345', '12']
+
+# Match words
+words = re.findall(r"\w+", text)
+print("Words found:", words)  # Output: ['My', 'number', 'is', '12345', 'and', 'my', 'code', 'is', 'AB12']
+    </code></pre>
+            <p>In this example, <code>\d+</code> matches one or more digits, while <code>\w+</code> matches one or more
+                word characters in the text.</p>
+        </section>
+
+        <!-- Section 22: Iterators and Generators -->
+        <section>
+            <h2>Iterators and Generators</h2>
+            <p>Iterators and generators are essential concepts in Python that allow us to traverse through a sequence of
+                data. They provide a way to iterate over items without creating a list in memory, which is particularly
+                useful when working with large datasets.</p>
+        </section>
+
+        <!-- Subsection: iter() and next() -->
+        <section>
+            <h3><code>iter()</code> and <code>next()</code></h3>
+            <p>An iterator is an object that contains a countable number of values. In Python, <code>iter()</code> is
+                used to create an iterator from an iterable (like a list or a tuple), and <code>next()</code> is used to
+                retrieve the next item from the iterator.</p>
+            <pre><code>
+# Example: Using iter() and next()
+my_list = [1, 2, 3, 4]
+my_iter = iter(my_list)
+
+print(next(my_iter))  # Output: 1
+print(next(my_iter))  # Output: 2
+print(next(my_iter))  # Output: 3
+print(next(my_iter))  # Output: 4
+    </code></pre>
+            <p>In this example, <code>iter()</code> converts the list into an iterator, and <code>next()</code>
+                retrieves each element one by one.</p>
+        </section>
+
+        <!-- Subsection: Creating Custom Iterators -->
+        <section>
+            <h3>Creating Custom Iterators</h3>
+            <p>In Python, you can create your own custom iterator by defining a class with the <code>__iter__()</code>
+                and <code>__next__()</code> methods. The <code>__iter__()</code> method returns the iterator object, and
+                the <code>__next__()</code> method returns the next item in the sequence.</p>
+            <pre><code>
+# Example: Custom Iterator Class
+class MyIterator:
+    def __init__(self, max_value):
+        self.max_value = max_value
+        self.current = 0
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.current < self.max_value:
+            self.current += 1
+            return self.current
+        else:
+            raise StopIteration
+
+# Using the custom iterator
+my_iter = MyIterator(5)
+for number in my_iter:
+    print(number)  # Output: 1 2 3 4 5
+    </code></pre>
+            <p>In this example, the <code>MyIterator</code> class defines a custom iterator that returns numbers from 1
+                to the specified max value.</p>
+        </section>
+
+        <!-- Subsection: Generator Functions and yield -->
+        <section>
+            <h3>Generator Functions and <code>yield</code></h3>
+            <p>Generators are a simpler way to create iterators. A generator function uses <code>yield</code> to return
+                values one at a time, without storing the entire sequence in memory. Each time the generator's
+                <code>next()</code> method is called, the function resumes where it left off.
+            </p>
+            <pre><code>
+# Example: Generator Function with yield
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+
+# Using the generator
+gen = my_generator()
+
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+print(next(gen))  # Output: 3
+    </code></pre>
+            <p>In this example, the <code>my_generator()</code> function yields values one at a time when called with
+                <code>next()</code>. Generators are memory efficient since they only generate values when requested.
+            </p>
+        </section>
+
+        <!-- Subsection: Generator Expressions -->
+        <section>
+            <h3>Generator Expressions</h3>
+            <p>Generator expressions are similar to list comprehensions, but they use parentheses instead of square
+                brackets. They produce values on demand, making them more memory efficient than list comprehensions for
+                large datasets.</p>
+            <pre><code>
+# Example: Generator Expression
+my_gen = (x * x for x in range(5))
+
+# Using the generator expression
+for value in my_gen:
+    print(value)  # Output: 0 1 4 9 16
+    </code></pre>
+            <p>In this example, the generator expression <code>(x * x for x in range(5))</code> creates a generator that
+                yields the square of each number from 0 to 4.</p>
+        </section>
+
+        <!-- Section 23: Decorators -->
+        <section>
+            <h2>Decorators</h2>
+            <p>Decorators in Python are a powerful tool that allows you to modify the behavior of functions or classes.
+                They are commonly used for logging, access control, memoization, and more. A decorator is applied to a
+                function or class by placing it above the function definition using the <code>@decorator_name</code>
+                syntax.</p>
+        </section>
+
+        <!-- Subsection: Function Decorators -->
+        <section>
+            <h3>Function Decorators</h3>
+            <p>Function decorators are the most common type of decorators. They take a function as an argument and
+                return a new function with modified behavior. This is often used to add functionality without changing
+                the original function.</p>
+            <pre><code>
+# Example: Function Decorator
+def my_decorator(func):
+    def wrapper():
+        print("Something before the function.")
+        func()
+        print("Something after the function.")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+# Using the decorated function
+say_hello()
+# Output:
+# Something before the function.
+# Hello!
+# Something after the function.
+    </code></pre>
+            <p>In this example, the <code>my_decorator</code> adds additional behavior before and after the
+                <code>say_hello()</code> function.
+            </p>
+        </section>
+
+        <!-- Subsection: Class Decorators -->
+        <section>
+            <h3>Class Decorators</h3>
+            <p>Class decorators work similarly to function decorators but are applied to entire classes. They allow you
+                to modify or enhance the functionality of a class.</p>
+            <pre><code>
+# Example: Class Decorator
+def class_decorator(cls):
+    class Wrapper:
+        def __init__(self, *args, **kwargs):
+            self.wrapped = cls(*args, **kwargs)
+
+        def __getattr__(self, name):
+            return getattr(self.wrapped, name)
+
+        def say_hello(self):
+            print("Something before the method.")
+            self.wrapped.say_hello()
+            print("Something after the method.")
+    
+    return Wrapper
+
+@class_decorator
+class MyClass:
+    def say_hello(self):
+        print("Hello from MyClass!")
+
+# Using the decorated class
+obj = MyClass()
+obj.say_hello()
+# Output:
+# Something before the method.
+# Hello from MyClass!
+# Something after the method.
+    </code></pre>
+            <p>Here, the <code>class_decorator</code> wraps around <code>MyClass</code> and modifies the behavior of the
+                <code>say_hello()</code> method.
+            </p>
+        </section>
+
+        <!-- Subsection: Chaining Decorators -->
+        <section>
+            <h3>Chaining Decorators</h3>
+            <p>You can apply multiple decorators to a single function by chaining them. The decorators are applied from
+                bottom to top (the closest decorator to the function is applied first).</p>
+            <pre><code>
+# Example: Chaining Decorators
+def decorator_one(func):
+    def wrapper():
+        print("Decorator One")
+        func()
+    return wrapper
+
+def decorator_two(func):
+    def wrapper():
+        print("Decorator Two")
+        func()
+    return wrapper
+
+@decorator_one
+@decorator_two
+def greet():
+    print("Hello!")
+
+# Using the function with chained decorators
+greet()
+# Output:
+# Decorator One
+# Decorator Two
+# Hello!
+    </code></pre>
+            <p>In this example, both <code>decorator_one</code> and <code>decorator_two</code> are applied to the
+                <code>greet()</code> function. The output shows the order in which they are applied.
+            </p>
+        </section>
+
+        <!-- Subsection: Practical Use Cases of Decorators -->
+        <section>
+            <h3>Practical Use Cases of Decorators</h3>
+            <p>Decorators have many practical applications. Some common use cases include:</p>
+            <ul>
+                <li><strong>Logging:</strong> Automatically log information when a function is called.</li>
+                <li><strong>Access Control:</strong> Restrict access to certain functions based on user roles or
+                    permissions.</li>
+                <li><strong>Memoization:</strong> Cache the results of expensive function calls to improve performance.
+                </li>
+                <li><strong>Timing:</strong> Measure the execution time of a function.</li>
+            </ul>
+
+            <pre><code>
+# Example: Timing a Function
+import time
+
+def timing_decorator(func):
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+        result = func(*args, **kwargs)
+        end_time = time.time()
+        print(f"Function {func.__name__} took {end_time - start_time} seconds")
+        return result
+    return wrapper
+
+@timing_decorator
+def slow_function():
+    time.sleep(2)
+    print("Function complete")
+
+# Using the function with a timing decorator
+slow_function()
+# Output:
+# Function complete
+# Function slow_function took 2.0001 seconds
+    </code></pre>
+            <p>In this example, the <code>timing_decorator</code> is used to measure and display the execution time of
+                the <code>slow_function()</code>.</p>
+        </section>
+
+        <!-- Section 24: Context Managers -->
+        <section>
+            <h2>Context Managers</h2>
+            <p>Context Managers in Python are used to properly manage resources such as file handling, network
+                connections, and database connections. The most common use case of context managers is handling files
+                using the <code>with</code> statement.</p>
+        </section>
+
+        <!-- Subsection: Using with Statements -->
+        <section>
+            <h3>Using with Statements</h3>
+            <p>The <code>with</code> statement simplifies exception handling and ensures that resources are properly
+                cleaned up when the block of code is finished executing. It automatically calls the context manager’s
+                <code>__enter__</code> and <code>__exit__</code> methods.
+            </p>
+            <pre><code>
+# Example: Using with Statement for File Handling
+with open('example.txt', 'w') as file:
+    file.write("Hello, World!")
+    
+# The file is automatically closed after the with block ends.
+    </code></pre>
+            <p>In this example, the file <code>example.txt</code> is opened and written to within the <code>with</code>
+                block. The file is automatically closed when the block finishes, even if an exception occurs.</p>
+        </section>
+
+        <!-- Subsection: Creating Custom Context Managers (__enter__ and __exit__) -->
+        <section>
+            <h3>Creating Custom Context Managers (<code>__enter__</code> and <code>__exit__</code>)</h3>
+            <p>You can create your own context managers by defining a class with <code>__enter__</code> and
+                <code>__exit__</code> methods. The <code>__enter__</code> method is called at the start of the
+                <code>with</code> block, and the <code>__exit__</code> method is called when the block ends.
+            </p>
+            <pre><code>
+# Example: Custom Context Manager
+class MyContextManager:
+    def __enter__(self):
+        print("Entering the context")
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print("Exiting the context")
+    
+# Using the custom context manager
+with MyContextManager():
+    print("Inside the context")
+# Output:
+# Entering the context
+# Inside the context
+# Exiting the context
+    </code></pre>
+            <p>In this example, the <code>MyContextManager</code> class defines both <code>__enter__</code> and
+                <code>__exit__</code>. When the <code>with</code> block is entered, the <code>__enter__</code> method is
+                called, and when it exits, the <code>__exit__</code> method is called.
+            </p>
+        </section>
+
+        <!-- Subsection: Contextlib Library (contextmanager) -->
+        <section>
+            <h3>Contextlib Library (<code>contextmanager</code>)</h3>
+            <p>The <code>contextlib</code> module provides a simpler way to create context managers using the
+                <code>@contextmanager</code> decorator. This allows you to define context managers using generator
+                functions.
+            </p>
+            <pre><code>
+from contextlib import contextmanager
+
+# Example: Context Manager using contextlib
+@contextmanager
+def my_context():
+    print("Entering the context")
+    yield
+    print("Exiting the context")
+
+# Using the context manager
+with my_context():
+    print("Inside the context")
+# Output:
+# Entering the context
+# Inside the context
+# Exiting the context
+    </code></pre>
+            <p>In this example, the <code>@contextmanager</code> decorator is used to create a context manager. The code
+                before <code>yield</code> is executed when entering the context, and the code after <code>yield</code>
+                is executed when exiting the context.</p>
+        </section>
+
+        <!-- Subsection: Practical Use Cases of Context Managers -->
+        <section>
+            <h3>Practical Use Cases of Context Managers</h3>
+            <p>Context managers are useful for many scenarios, including:</p>
+            <ul>
+                <li><strong>File Handling:</strong> Automatically closing files after reading or writing.</li>
+                <li><strong>Database Connections:</strong> Ensuring database connections are closed after usage.</li>
+                <li><strong>Thread Locking:</strong> Acquiring and releasing locks in multithreading.</li>
+                <li><strong>Temporary Resource Management:</strong> Setting up and tearing down temporary resources.
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 25: Multithreading and Multiprocessing -->
+        <section>
+            <h2>Multithreading and Multiprocessing</h2>
+            <p>Multithreading and multiprocessing are two techniques used in Python to achieve concurrent execution of
+                code. They help improve the performance of programs by allowing multiple operations to be executed
+                simultaneously.</p>
+        </section>
+
+        <!-- Subsection: Threading Basics -->
+        <section>
+            <h3>Threading Basics</h3>
+            <p>A thread is the smallest unit of processing that can be scheduled by an operating system. Threads within
+                a process share the same memory space, making communication between threads easier but also raising
+                potential issues with thread safety.</p>
+        </section>
+
+        <!-- Subsection: Multithreading with threading Module -->
+        <section>
+            <h3>Multithreading with <code>threading</code> Module</h3>
+            <p>The <code>threading</code> module in Python allows you to create and manage threads easily.</p>
+            <pre><code>
+import threading
+import time
+
+def thread_function(name):
+    print(f"Thread {name}: starting")
+    time.sleep(2)
+    print(f"Thread {name}: finishing")
+
+# Creating threads
+thread1 = threading.Thread(target=thread_function, args=(1,))
+thread2 = threading.Thread(target=thread_function, args=(2,))
+
+# Starting threads
+thread1.start()
+thread2.start()
+
+# Waiting for threads to finish
+thread1.join()
+thread2.join()
+
+print("Main thread: all threads finished.")
+    </code></pre>
+            <p>In this example, two threads are created and started. The <code>join</code> method is used to wait for
+                the threads to complete before proceeding.</p>
+        </section>
+
+        <!-- Subsection: Multiprocessing with multiprocessing Module -->
+        <section>
+            <h3>Multiprocessing with <code>multiprocessing</code> Module</h3>
+            <p>The <code>multiprocessing</code> module allows you to create multiple processes, which can run
+                independently and utilize multiple CPU cores.</p>
+            <pre><code>
+import multiprocessing
+import time
+
+def process_function(name):
+    print(f"Process {name}: starting")
+    time.sleep(2)
+    print(f"Process {name}: finishing")
+
+if __name__ == "__main__":
+    # Creating processes
+    process1 = multiprocessing.Process(target=process_function, args=(1,))
+    process2 = multiprocessing.Process(target=process_function, args=(2,))
+
+    # Starting processes
+    process1.start()
+    process2.start()
+
+    # Waiting for processes to finish
+    process1.join()
+    process2.join()
+
+    print("Main process: all processes finished.")
+    </code></pre>
+            <p>This example creates two separate processes, each running independently and using separate memory spaces.
+            </p>
+        </section>
+
+        <!-- Subsection: Thread Safety and Synchronization (Lock, Semaphore) -->
+        <section>
+            <h3>Thread Safety and Synchronization (<code>Lock</code>, <code>Semaphore</code>)</h3>
+            <p>Thread safety is essential when multiple threads access shared resources. The <code>Lock</code> and
+                <code>Semaphore</code> classes from the <code>threading</code> module can help synchronize access to
+                resources.
+            </p>
+            <pre><code>
+import threading
+
+lock = threading.Lock()
+counter = 0
+
+def safe_increment():
+    global counter
+    with lock:
+        for _ in range(100000):
+            counter += 1
+
+thread1 = threading.Thread(target=safe_increment)
+thread2 = threading.Thread(target=safe_increment)
+
+thread1.start()
+thread2.start()
+
+thread1.join()
+thread2.join()
+
+print(f"Final counter value: {counter}")
+    </code></pre>
+            <p>In this example, a <code>Lock</code> is used to ensure that only one thread can increment the counter at
+                a time, preventing race conditions.</p>
+        </section>
+
+        <!-- Subsection: Concurrent Futures and Async Programming (concurrent.futures, asyncio) -->
+        <section>
+            <h3>Concurrent Futures and Async Programming (<code>concurrent.futures</code>, <code>asyncio</code>)</h3>
+            <p>Python provides <code>concurrent.futures</code> for a high-level interface to asynchronously execute
+                callables. The <code>asyncio</code> module is used for writing single-threaded concurrent code using
+                coroutines.</p>
+
+            <pre><code>
+from concurrent.futures import ThreadPoolExecutor
+import time
+
+def task(n):
+    print(f"Task {n}: starting")
+    time.sleep(1)
+    print(f"Task {n}: finished")
+    return n
+
+# Using ThreadPoolExecutor
+with ThreadPoolExecutor(max_workers=3) as executor:
+    results = list(executor.map(task, range(5)))
+
+print("All tasks completed:", results)
+    </code></pre>
+
+            <p>In this example, <code>ThreadPoolExecutor</code> is used to run multiple tasks concurrently. The tasks
+                run in separate threads managed by the executor.</p>
+
+            <pre><code>
+import asyncio
+
+async def async_task(n):
+    print(f"Async task {n}: starting")
+    await asyncio.sleep(1)
+    print(f"Async task {n}: finished")
+
+async def main():
+    tasks = [async_task(i) for i in range(5)]
+    await asyncio.gather(*tasks)
+
+# Running the async main function
+asyncio.run(main())
+    </code></pre>
+            <p>This example demonstrates how to create asynchronous tasks using the <code>asyncio</code> module,
+                allowing tasks to run concurrently without creating new threads or processes.</p>
+        </section>
+
+        <!-- Section 27: Asynchronous Programming -->
+        <section>
+            <h2>Asynchronous Programming</h2>
+            <p>Asynchronous programming is a programming paradigm that allows you to write concurrent code using the
+                async/await syntax. It is particularly useful for I/O-bound tasks, where operations can be performed
+                without blocking the execution of the program.</p>
+        </section>
+
+        <!-- Subsection: Async IO Basics (async and await) -->
+        <section>
+            <h3>Async IO Basics (<code>async</code> and <code>await</code>)</h3>
+            <p>In Python, you can define asynchronous functions using the <code>async def</code> syntax and use the
+                <code>await</code> keyword to pause the execution of the function until a result is available.</p>
+            <pre><code>
+import asyncio
+
+async def hello_world():
+    print("Hello")
+    await asyncio.sleep(1)  # Simulating an I/O-bound operation
+    print("World")
+
+# Running the async function
+asyncio.run(hello_world())
+    </code></pre>
+            <p>This example demonstrates an asynchronous function that prints "Hello", waits for 1 second, and then
+                prints "World". The <code>await</code> keyword allows other tasks to run while waiting.</p>
+        </section>
+
+        <!-- Subsection: Event Loop and Coroutines -->
+        <section>
+            <h3>Event Loop and Coroutines</h3>
+            <p>The event loop is the core of asynchronous programming in Python. It manages the execution of
+                asynchronous tasks, scheduling them to run when their results are ready.</p>
+            <pre><code>
+async def coroutine_1():
+    print("Coroutine 1: Start")
+    await asyncio.sleep(2)
+    print("Coroutine 1: End")
+
+async def coroutine_2():
+    print("Coroutine 2: Start")
+    await asyncio.sleep(1)
+    print("Coroutine 2: End")
+
+async def main():
+    # Running coroutines concurrently
+    await asyncio.gather(coroutine_1(), coroutine_2())
+
+# Running the main coroutine
+asyncio.run(main())
+    </code></pre>
+            <p>In this example, two coroutines are run concurrently using <code>asyncio.gather</code>. The event loop
+                manages their execution, allowing them to run in parallel without blocking each other.</p>
+        </section>
+
+        <!-- Subsection: Asynchronous File Handling and Network Requests -->
+        <section>
+            <h3>Asynchronous File Handling and Network Requests</h3>
+            <p>Asynchronous programming can also be used for file handling and network requests to improve efficiency
+                and responsiveness in applications.</p>
+
+            <pre><code>
+import aiofiles
+
+async def read_file(file_path):
+    async with aiofiles.open(file_path, mode='r') as file:
+        contents = await file.read()
+        print(contents)
+
+async def write_file(file_path, data):
+    async with aiofiles.open(file_path, mode='w') as file:
+        await file.write(data)
+
+# Example usage
+async def file_operations():
+    await write_file('example.txt', 'Hello, Async File Handling!')
+    await read_file('example.txt')
+
+asyncio.run(file_operations())
+    </code></pre>
+            <p>This example shows how to read from and write to a file asynchronously using the <code>aiofiles</code>
+                library, which allows for non-blocking file I/O operations.</p>
+
+            <pre><code>
+import aiohttp
+
+async def fetch_url(url):
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            return await response.text()
+
+async def main():
+    url = 'https://www.example.com'
+    html_content = await fetch_url(url)
+    print(html_content)
+
+asyncio.run(main())
+    </code></pre>
+            <p>This code demonstrates making an asynchronous HTTP GET request using the <code>aiohttp</code> library,
+                allowing you to fetch data from the web without blocking the event loop.</p>
+        </section>
+
+        <!-- Subsection: asyncio Module -->
+        <section>
+            <h3><code>asyncio</code> Module</h3>
+            <p>The <code>asyncio</code> module is the standard library for writing asynchronous code in Python. It
+                provides an event loop, coroutines, tasks, and many other utilities for asynchronous programming.</p>
+            <pre><code>
+import asyncio
+
+async def main():
+    print("Start")
+    await asyncio.sleep(1)
+    print("End")
+
+# Running the asyncio event loop
+if __name__ == "__main__":
+    asyncio.run(main())
+    </code></pre>
+            <p>In this example, the <code>asyncio.run</code> function is used to execute the main coroutine. The event
+                loop runs until the main coroutine is complete.</p>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
