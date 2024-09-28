@@ -96,6 +96,22 @@ a:hover {
     text-decoration: underline;
 }
 
+.home {
+    background-color: darkseagreen;
+    cursor: pointer;
+    padding: 10px 45px;
+    border: none;
+    min-width: 70%;
+    border-radius: 5px;
+    margin-left: 50px;
+    color: white;
+    font-weight: 800;
+}
+
+.home:hover {
+    background-color: rgb(87, 153, 87);
+}
+
 /* Footer Styling */
 footer {
     text-align: center;
