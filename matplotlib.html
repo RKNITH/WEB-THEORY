@@ -1,0 +1,1111 @@
+<!-- matplotlib.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Introduction to Matplotlib and its features">
+    <title>Matplotlib - Learning Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Matplotlib</h1>
+        <p>Learn the basics of Matplotlib, a powerful plotting library for Python.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction to Matplotlib</h2>
+            <p>Matplotlib is a popular Python library used for data visualization and graphical plotting. It is widely
+                used in data analysis, machine learning, and scientific research.</p>
+        </section>
+        <section>
+            <h2>What is Matplotlib?</h2>
+            <p>Matplotlib is a low-level library for creating static, animated, and interactive visualizations in
+                Python. It provides a comprehensive toolkit for creating charts like line plots, scatter plots, bar
+                charts, histograms, and more.</p>
+        </section>
+        <section>
+            <h2>Installing Matplotlib</h2>
+            <p>To install Matplotlib, you can use the following command:</p>
+            <pre><code>pip install matplotlib</code></pre>
+            <p>This command will download and install Matplotlib along with its dependencies. Once installed, you can
+                start using it by importing it in your Python script:</p>
+            <pre><code>import matplotlib.pyplot as plt</code></pre>
+        </section>
+        <section>
+            <h2>Basic Plotting</h2>
+            <p>Here's a simple example of creating a basic line plot using Matplotlib:</p>
+            <pre><code>
+import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
+
+# Create a line plot
+plt.plot(x, y)
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+plt.title('Basic Line Plot')
+plt.show()
+            </code></pre>
+            <p>This code will generate a basic line plot with the provided x and y values. You can customize it further
+                by changing colors, adding markers, and more.</p>
+        </section>
+        <!-- Section: Line Plots -->
+        <section>
+            <h2>Line Plots</h2>
+            <p>A line plot displays data points connected by straight lines. It's used to show trends over time.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
+
+# Create a line plot
+plt.plot(x, y, marker='o')
+plt.title('Line Plot Example')
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Bar Plots -->
+        <section>
+            <h2>Bar Plots</h2>
+            <p>Bar plots are used to compare quantities of categorical data using rectangular bars.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+categories = ['A', 'B', 'C', 'D']
+values = [3, 7, 5, 9]
+
+# Create a bar plot
+plt.bar(categories, values, color='skyblue')
+plt.title('Bar Plot Example')
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Histograms -->
+        <section>
+            <h2>Histograms</h2>
+            <p>Histograms display the distribution of data by grouping data points into ranges or bins.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data
+data = np.random.randn(1000)
+
+# Create a histogram
+plt.hist(data, bins=30, color='purple')
+plt.title('Histogram Example')
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Pie Charts -->
+        <section>
+            <h2>Pie Charts</h2>
+            <p>Pie charts represent the proportion of each category relative to the total.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+labels = ['Apple', 'Banana', 'Cherry', 'Date']
+sizes = [25, 35, 20, 20]
+
+# Create a pie chart
+plt.pie(sizes, labels=labels, autopct='%1.1f%%', startangle=140)
+plt.title('Pie Chart Example')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Scatter Plots -->
+        <section>
+            <h2>Scatter Plots</h2>
+            <p>Scatter plots show the relationship between two variables by plotting points at their corresponding x and
+                y coordinates.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [5, 7, 8, 7, 2, 17, 2, 9, 4, 11]
+y = [99, 86, 87, 88, 100, 86, 103, 87, 94, 78]
+
+# Create a scatter plot
+plt.scatter(x, y, color='red')
+plt.title('Scatter Plot Example')
+plt.xlabel('X Values')
+plt.ylabel('Y Values')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Box Plots -->
+        <section>
+            <h2>Box Plots</h2>
+            <p>Box plots display the distribution of data based on the quartiles, showing outliers and the median value.
+            </p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate random data
+data = [np.random.normal(0, std, 100) for std in range(1, 4)]
+
+# Create a box plot
+plt.boxplot(data, vert=True, patch_artist=True)
+plt.title('Box Plot Example')
+plt.xlabel('Group')
+plt.ylabel('Values')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Area Plots -->
+        <section>
+            <h2>Area Plots</h2>
+            <p>Area plots are similar to line plots but the area under the line is filled with color to show volume.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4, 5]
+y1 = [1, 4, 6, 8, 10]
+y2 = [2, 2, 5, 5, 7]
+
+# Create an area plot
+plt.fill_between(x, y1, color="skyblue", alpha=0.4)
+plt.fill_between(x, y2, color="orange", alpha=0.4)
+plt.title('Area Plot Example')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Error Bar Plots -->
+        <section>
+            <h2>Error Bar Plots</h2>
+            <p>Error bar plots show the variability of data using error bars on top of standard plot types like lines or
+                bars.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+x = np.linspace(0, 10, 10)
+y = np.sin(x)
+yerr = 0.1
+
+# Create an error bar plot
+plt.errorbar(x, y, yerr=yerr, fmt='o')
+plt.title('Error Bar Plot Example')
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Stacked Bar Plots -->
+        <section>
+            <h2>Stacked Bar Plots</h2>
+            <p>Stacked bar plots show the distribution of sub-categories within the main category, displayed as stacked
+                bars.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+categories = ['A', 'B', 'C', 'D']
+values1 = [3, 7, 5, 9]
+values2 = [2, 5, 7, 8]
+
+# Create a stacked bar plot
+plt.bar(categories, values1, color='blue')
+plt.bar(categories, values2, bottom=values1, color='orange')
+plt.title('Stacked Bar Plot Example')
+plt.xlabel('Categories')
+plt.ylabel('Values')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Stem Plots -->
+        <section>
+            <h2>Stem Plots</h2>
+            <p>Stem plots display discrete data points, with lines extending from a baseline to the data point.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+x = np.linspace(0.1, 2 * np.pi, 10)
+y = np.cos(x)
+
+# Create a stem plot
+plt.stem(x, y, basefmt='r-')
+plt.title('Stem Plot Example')
+plt.xlabel('X Axis')
+plt.ylabel('Y Axis')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Figure and Axes -->
+        <section>
+            <h2>Figure and Axes</h2>
+
+            <!-- Subsection: Understanding Figure and Axes Objects -->
+            <h3>Understanding Figure and Axes objects</h3>
+            <p>In Matplotlib, a **Figure** is the overall window or page that everything is drawn on, while **Axes**
+                represents the actual plot or chart area within the figure. Each figure can contain multiple Axes
+                (subplots).</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Create a figure and an axes
+fig, ax = plt.subplots()
+ax.plot([1, 2, 3, 4], [10, 20, 25, 30])
+ax.set_title('Understanding Figure and Axes')
+plt.show()</code></pre>
+
+            <!-- Subsection: Subplots and Creating Multiple Plots -->
+            <h3>Subplots and Creating Multiple Plots</h3>
+            <p>The `subplots()` function helps you create multiple plots in a single figure, allowing for easy
+                comparisons and grouped data visualization.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Create a 2x2 subplot grid
+fig, axs = plt.subplots(2, 2)
+axs[0, 0].plot([1, 2, 3], [4, 5, 6], 'r')
+axs[0, 0].set_title('Plot 1')
+axs[0, 1].plot([1, 2, 3], [7, 8, 9], 'g')
+axs[0, 1].set_title('Plot 2')
+axs[1, 0].plot([1, 2, 3], [10, 11, 12], 'b')
+axs[1, 0].set_title('Plot 3')
+axs[1, 1].plot([1, 2, 3], [13, 14, 15], 'orange')
+axs[1, 1].set_title('Plot 4')
+plt.show()</code></pre>
+
+            <!-- Subsection: Customizing Subplot Layouts -->
+            <h3>Customizing Subplot Layouts</h3>
+            <p>Use `subplot2grid()` or pass the layout dimensions to `subplots()` for more control over the layout.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Create subplots using subplot2grid()
+fig = plt.figure()
+ax1 = plt.subplot2grid((3, 3), (0, 0), colspan=3)
+ax2 = plt.subplot2grid((3, 3), (1, 0), colspan=2)
+ax3 = plt.subplot2grid((3, 3), (1, 2), rowspan=2)
+ax4 = plt.subplot2grid((3, 3), (2, 0), colspan=2)
+
+# Plotting on each subplot
+ax1.plot([1, 2, 3], [4, 5, 6])
+ax2.plot([1, 2, 3], [7, 8, 9])
+ax3.plot([1, 2, 3], [10, 11, 12])
+ax4.plot([1, 2, 3], [13, 14, 15])
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Customizing Plots -->
+        <section>
+            <h2>Customizing Plots</h2>
+
+            <!-- Subsection: Changing Line Styles and Markers -->
+            <h3>Changing Line Styles and Markers</h3>
+            <p>Change the line style (solid, dashed, dotted) and add markers (e.g., circle, square) to make the plot
+                more visually appealing.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Plot with different line styles and markers
+plt.plot([1, 2, 3], [4, 5, 6], linestyle='--', marker='o', color='b')
+plt.plot([1, 2, 3], [6, 5, 4], linestyle=':', marker='s', color='g')
+plt.title('Line Styles and Markers')
+plt.show()</code></pre>
+
+            <!-- Subsection: Adjusting Colors, Transparency, and Line Width -->
+            <h3>Adjusting Colors, Transparency, and Line Width</h3>
+            <p>You can adjust plot elements' colors, transparency (alpha), and line width for better visual
+                differentiation.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Create multiple lines with different styles
+plt.plot([1, 2, 3], [4, 5, 6], color='r', linewidth=2, alpha=0.5, label='Line 1')
+plt.plot([1, 2, 3], [6, 5, 4], color='b', linewidth=3, label='Line 2')
+plt.legend()
+plt.title('Colors, Transparency, and Line Width')
+plt.show()</code></pre>
+
+            <!-- Subsection: Modifying Axis Ticks and Labels -->
+            <h3>Modifying Axis Ticks and Labels</h3>
+            <p>Customize the appearance of the axis ticks and labels to make the plot easier to read and interpret.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [0.1, 0.2, 0.3, 0.4]
+y = [1, 4, 9, 16]
+
+# Create a plot with custom ticks
+plt.plot(x, y)
+plt.xticks([0.1, 0.2, 0.3, 0.4], ['A', 'B', 'C', 'D'])
+plt.yticks([1, 4, 9, 16], ['One', 'Four', 'Nine', 'Sixteen'])
+plt.title('Custom Axis Ticks and Labels')
+plt.show()</code></pre>
+
+            <!-- Subsection: Adding Text Annotations -->
+            <h3>Adding Text Annotations</h3>
+            <p>Text annotations are useful for adding labels, explanations, or markers to specific data points on your
+                plot.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3]
+y = [2, 4, 1]
+
+# Create a basic plot
+plt.plot(x, y, marker='o')
+plt.text(1, 2, 'Point 1', fontsize=12, color='red')
+plt.text(2, 4, 'Point 2', fontsize=12, color='blue')
+plt.text(3, 1, 'Point 3', fontsize=12, color='green')
+plt.title('Text Annotations Example')
+plt.show()</code></pre>
+
+            <!-- Subsection: Rotating Tick Labels -->
+            <h3>Rotating Tick Labels</h3>
+            <p>Rotating the tick labels can help avoid overlap and make dense plots easier to read.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+categories = ['January', 'February', 'March', 'April', 'May']
+values = [3, 7, 5, 9, 11]
+
+# Create a bar plot
+plt.bar(categories, values)
+plt.xticks(rotation=45)  # Rotate x-tick labels by 45 degrees
+plt.title('Rotated Tick Labels')
+plt.show()</code></pre>
+
+            <!-- Subsection: Controlling Plot Size and Aspect Ratio -->
+            <h3>Controlling Plot Size and Aspect Ratio</h3>
+            <p>Control the size and aspect ratio of the figure to match your layout and presentation needs.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Create a figure with specific size
+fig, ax = plt.subplots(figsize=(10, 5))  # Width=10, Height=5
+ax.plot([1, 2, 3], [4, 5, 6])
+plt.title('Controlling Plot Size and Aspect Ratio')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Legends and Annotations -->
+        <section>
+            <h2>Legends and Annotations</h2>
+
+            <!-- Subsection: Adding Legends to Plots -->
+            <h3>Adding Legends to Plots</h3>
+            <p>Legends provide context for your plots by labeling the different data series represented in the figure.
+            </p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4]
+y1 = [10, 20, 25, 30]
+y2 = [15, 25, 20, 35]
+
+# Create two lines and add a legend
+plt.plot(x, y1, label='Series 1', marker='o')
+plt.plot(x, y2, label='Series 2', marker='s')
+plt.legend(title='Data Series')
+plt.title('Adding Legends to Plots')
+plt.show()</code></pre>
+
+            <!-- Subsection: Positioning and Styling Legends -->
+            <h3>Positioning and Styling Legends</h3>
+            <p>Customize the position, font size, and style of legends to improve readability and presentation.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4]
+y1 = [10, 20, 25, 30]
+y2 = [15, 25, 20, 35]
+
+# Create two lines with a legend at a custom position
+plt.plot(x, y1, label='Series 1', marker='o')
+plt.plot(x, y2, label='Series 2', marker='s')
+plt.legend(loc='upper left', fontsize='large', frameon=True, shadow=True)
+plt.title('Positioning and Styling Legends')
+plt.show()</code></pre>
+
+            <!-- Subsection: Adding Annotations (Arrows, Labels, etc.) -->
+            <h3>Adding Annotations (Arrows, Labels, etc.)</h3>
+            <p>Use annotations like arrows, labels, and text to highlight specific points or regions in your plot.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Data
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+
+# Create a plot
+plt.plot(x, y, marker='o')
+# Add annotations
+plt.annotate('Highest Point', xy=(4, 30), xytext=(3, 35),
+             arrowprops=dict(facecolor='black', shrink=0.05))
+plt.title('Adding Annotations Example')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Working with Images -->
+        <section>
+            <h2>Working with Images</h2>
+
+            <!-- Subsection: Displaying Images using imshow() -->
+            <h3>Displaying Images using imshow()</h3>
+            <p>The `imshow()` function allows you to display images in Matplotlib. It can be used for visualizing image
+                data or matrices.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Create a random image
+image_data = np.random.random((10, 10))
+
+# Display the image using imshow()
+plt.imshow(image_data, cmap='viridis')
+plt.colorbar()
+plt.title('Displaying Images using imshow()')
+plt.show()</code></pre>
+
+            <!-- Subsection: Image Interpolation -->
+            <h3>Image Interpolation</h3>
+            <p>Interpolation controls how pixel values are estimated when enlarging images. You can use options like
+                'nearest', 'bilinear', or 'bicubic'.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Create a random image
+image_data = np.random.random((5, 5))
+
+# Display the image using different interpolations
+fig, axs = plt.subplots(1, 3, figsize=(15, 5))
+
+interpolations = ['nearest', 'bilinear', 'bicubic']
+for ax, interp in zip(axs, interpolations):
+    ax.imshow(image_data, interpolation=interp)
+    ax.set_title(f'Interpolation: {interp}')
+
+plt.suptitle('Image Interpolation Examples')
+plt.show()</code></pre>
+
+            <!-- Subsection: Color Maps and Color Bars -->
+            <h3>Color Maps and Color Bars</h3>
+            <p>Color maps represent data values as colors, and color bars provide a legend to interpret the values.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Create a gradient image
+gradient = np.linspace(0, 1, 256).reshape(1, -1)
+
+# Display the gradient using different color maps
+fig, axs = plt.subplots(1, 3, figsize=(15, 5))
+
+color_maps = ['viridis', 'plasma', 'inferno']
+for ax, cmap in zip(axs, color_maps):
+    ax.imshow(gradient, aspect='auto', cmap=cmap)
+    ax.set_title(f'Colormap: {cmap}')
+    ax.axis('off')
+
+# Display a color bar for the 'viridis' colormap
+fig.colorbar(axs[0].imshow(gradient, cmap='viridis'), ax=axs[0], orientation='vertical')
+plt.suptitle('Color Maps and Color Bars')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Working with Dates and Times -->
+        <section>
+            <h2>Working with Dates and Times</h2>
+
+            <!-- Subsection: Plotting Time Series Data -->
+            <h3>Plotting Time Series Data</h3>
+            <p>Matplotlib provides support for visualizing time series data. You can use the `plot_date()` function or
+                simply `plot()` with datetime objects to create time-based plots.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import datetime
+
+# Generate time series data
+dates = [datetime.date(2023, 9, i) for i in range(1, 11)]
+values = [10, 12, 15, 18, 20, 22, 19, 17, 15, 10]
+
+# Plotting time series data
+plt.plot_date(dates, values, linestyle='solid', marker='o')
+plt.title('Time Series Data')
+plt.xlabel('Date')
+plt.ylabel('Value')
+plt.gcf().autofmt_xdate()  # Auto-format date labels
+plt.show()</code></pre>
+
+            <!-- Subsection: Formatting Dates on Axes -->
+            <h3>Formatting Dates on Axes</h3>
+            <p>Use `mdates` to control the appearance of date and time labels on the axes. You can specify formats like
+                year, month, day, or even more detailed formats.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import datetime
+
+# Generate time series data
+dates = [datetime.date(2023, 9, i) for i in range(1, 11)]
+values = [10, 12, 15, 18, 20, 22, 19, 17, 15, 10]
+
+# Plot time series data
+fig, ax = plt.subplots()
+ax.plot(dates, values, marker='o')
+
+# Set the date format on the x-axis
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %d, %Y'))
+ax.xaxis.set_major_locator(mdates.DayLocator(interval=1))
+fig.autofmt_xdate()  # Auto-format date labels for better appearance
+plt.title('Formatted Dates on Axes')
+plt.xlabel('Date')
+plt.ylabel('Value')
+plt.show()</code></pre>
+
+            <!-- Subsection: Customizing Time-Related Plots -->
+            <h3>Customizing Time-Related Plots</h3>
+            <p>You can further customize time-related plots by modifying the interval of date ticks, adding grid lines,
+                or changing the color and size of date labels.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import matplotlib.dates as mdates
+import datetime
+
+# Generate time series data
+dates = [datetime.date(2023, 9, i) for i in range(1, 11)]
+values = [10, 12, 15, 18, 20, 22, 19, 17, 15, 10]
+
+# Create a plot
+fig, ax = plt.subplots()
+ax.plot(dates, values, marker='o', color='teal', linestyle='--')
+
+# Customize date ticks and grid
+ax.xaxis.set_major_formatter(mdates.DateFormatter('%b %d'))
+ax.xaxis.set_major_locator(mdates.DayLocator(interval=2))
+ax.grid(True, which='both', linestyle='--', linewidth=0.5)
+
+# Change tick label appearance
+plt.xticks(rotation=45, fontsize=10, color='purple')
+plt.yticks(fontsize=10, color='purple')
+
+plt.title('Customized Time-Related Plot')
+plt.xlabel('Date')
+plt.ylabel('Value')
+plt.show()</code></pre>
+
+        </section>
+
+
+        <!-- Section: Customizing Axes -->
+        <section>
+            <h2>Customizing Axes</h2>
+
+            <!-- Subsection: Adjusting Axis Limits and Scales -->
+            <h3>Adjusting Axis Limits and Scales</h3>
+            <p>You can adjust the limits of the x and y axes using the `set_xlim()` and `set_ylim()` methods to focus on
+                specific data ranges.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 25, 30, 15]
+
+# Create a plot
+plt.plot(x, y, marker='o')
+
+# Set axis limits
+plt.xlim(1, 5)
+plt.ylim(0, 35)
+
+plt.title('Adjusting Axis Limits')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.show()</code></pre>
+
+            <!-- Subsection: Logarithmic Scale Plotting -->
+            <h3>Logarithmic Scale Plotting</h3>
+            <p>Matplotlib allows you to set either the x or y-axis to a logarithmic scale using the `set_xscale()` or
+                `set_yscale()` methods.</p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+x = np.linspace(1, 100, 100)
+y = np.log(x)
+
+# Create a plot
+plt.plot(x, y, marker='o')
+
+# Set y-axis to logarithmic scale
+plt.yscale('log')
+
+plt.title('Logarithmic Scale Plotting')
+plt.xlabel('X-axis')
+plt.ylabel('Log of Y-axis')
+plt.show()</code></pre>
+
+            <!-- Subsection: Customizing Axis Labels and Ticks -->
+            <h3>Customizing Axis Labels and Ticks</h3>
+            <p>You can customize the axis labels and ticks using `set_xlabel()`, `set_ylabel()`, and `set_xticks()`
+                methods.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 25, 30, 15]
+
+# Create a plot
+plt.plot(x, y, marker='o')
+
+# Customize axis labels
+plt.xlabel('Custom X-axis Label')
+plt.ylabel('Custom Y-axis Label')
+
+# Customize x-ticks
+plt.xticks([1, 2, 3, 4, 5], ['One', 'Two', 'Three', 'Four', 'Five'])
+
+plt.title('Customizing Axis Labels and Ticks')
+plt.show()</code></pre>
+
+            <!-- Subsection: Reversing Axes -->
+            <h3>Reversing Axes</h3>
+            <p>You can reverse the direction of the axes using the `invert_xaxis()` and `invert_yaxis()` methods.</p>
+            <pre><code>import matplotlib.pyplot as plt
+
+# Sample data
+x = [1, 2, 3, 4, 5]
+y = [10, 20, 25, 30, 15]
+
+# Create a plot
+plt.plot(x, y, marker='o')
+
+# Reverse x and y axes
+plt.gca().invert_xaxis()
+plt.gca().invert_yaxis()
+
+plt.title('Reversed Axes')
+plt.xlabel('X-axis (Reversed)')
+plt.ylabel('Y-axis (Reversed)')
+plt.show()</code></pre>
+
+        </section>
+
+        <!-- Section: Advanced Plotting -->
+        <section>
+            <h2>Advanced Plotting</h2>
+
+            <!-- Subsection: 3D Plotting with mpl_toolkits.mplot3d -->
+            <h3>3D Plotting with mpl_toolkits.mplot3d</h3>
+            <p>Matplotlib allows 3D plotting using the `mpl_toolkits.mplot3d` module. Here’s how to create a simple 3D
+                scatter plot:</p>
+            <pre><code>import matplotlib.pyplot as plt
+    from mpl_toolkits.mplot3d import Axes3D
+    import numpy as np
+    
+    # Sample data
+    x = np.random.rand(100)
+    y = np.random.rand(100)
+    z = np.random.rand(100)
+    
+    # Create a 3D scatter plot
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(x, y, z)
+    
+    ax.set_title('3D Scatter Plot')
+    ax.set_xlabel('X-axis')
+    ax.set_ylabel('Y-axis')
+    ax.set_zlabel('Z-axis')
+    plt.show()</code></pre>
+
+            <!-- Subsection: Contour Plots -->
+            <h3>Contour Plots</h3>
+            <p>Contour plots are used to represent three-dimensional data in two dimensions using contour lines. Here's
+                how to create a simple contour plot:</p>
+            <pre><code>import matplotlib.pyplot as plt
+    import numpy as np
+    
+    # Create grid data
+    x = np.linspace(-5, 5, 100)
+    y = np.linspace(-5, 5, 100)
+    X, Y = np.meshgrid(x, y)
+    Z = np.sin(np.sqrt(X**2 + Y**2))
+    
+    # Create a contour plot
+    plt.contour(X, Y, Z, levels=20, cmap='viridis')
+    
+    plt.title('Contour Plot')
+    plt.xlabel('X-axis')
+    plt.ylabel('Y-axis')
+    plt.colorbar(label='Z-axis values')
+    plt.show()</code></pre>
+
+            <!-- Subsection: Quiver Plots -->
+            <h3>Quiver Plots</h3>
+            <p>Quiver plots are used to display vector fields. Here’s how to create a quiver plot:</p>
+            <pre><code>import matplotlib.pyplot as plt
+    import numpy as np
+    
+    # Create grid data
+    Y, X = np.mgrid[-3:3:100j, -3:3:100j]
+    U = -1 - X**2 + Y
+    V = 1 + X - Y**2
+    
+    # Create a quiver plot
+    plt.quiver(X, Y, U, V, color='r')
+    
+    plt.title('Quiver Plot')
+    plt.xlabel('X-axis')
+    plt.ylabel('Y-axis')
+    plt.xlim(-3, 3)
+    plt.ylim(-3, 3)
+    plt.show()</code></pre>
+
+            <!-- Subsection: Streamplots -->
+            <h3>Streamplots</h3>
+            <p>Streamplots visualize vector fields in a way that follows the flow of the vectors. Here's how to create a
+                streamplot:</p>
+            <pre><code>import matplotlib.pyplot as plt
+    import numpy as np
+    
+    # Create grid data
+    Y, X = np.mgrid[-3:3:100j, -3:3:100j]
+    U = -1 - X**2 + Y
+    V = 1 + X - Y**2
+    
+    # Create a streamplot
+    plt.streamplot(X, Y, U, V, color='b')
+    
+    plt.title('Streamplot')
+    plt.xlabel('X-axis')
+    plt.ylabel('Y-axis')
+    plt.xlim(-3, 3)
+    plt.ylim(-3, 3)
+    plt.show()</code></pre>
+
+        </section>
+
+        <!-- Section: Saving and Exporting Plots -->
+        <section>
+            <h2>Saving and Exporting Plots</h2>
+
+            <!-- Subsection: Saving Plots to Files -->
+            <h3>Saving Plots to Files (PNG, PDF, SVG, etc.)</h3>
+            <p>You can save your Matplotlib plots in various formats like PNG, PDF, and SVG using the
+                <code>savefig()</code> function. Here’s an example:
+            </p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+# Create a simple plot
+plt.plot(x, y)
+plt.title('Sine Wave')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+# Save the plot to a file
+plt.savefig('sine_wave.png')  # Save as PNG
+plt.savefig('sine_wave.pdf')   # Save as PDF
+plt.savefig('sine_wave.svg')    # Save as SVG
+plt.show()</code></pre>
+
+            <!-- Subsection: Adjusting Resolution (DPI) for Saved Plots -->
+            <h3>Adjusting Resolution (DPI) for Saved Plots</h3>
+            <p>You can adjust the resolution of your saved plots using the <code>dpi</code> parameter in the
+                <code>savefig()</code> function. Higher DPI values result in higher resolution images. Here's how to do
+                it:
+            </p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+x = np.linspace(0, 10, 100)
+y = np.cos(x)
+
+# Create a simple plot
+plt.plot(x, y)
+plt.title('Cosine Wave')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+# Save the plot with different DPI
+plt.savefig('cosine_wave_high_res.png', dpi=300)  # High resolution
+plt.savefig('cosine_wave_low_res.png', dpi=72)    # Low resolution
+plt.show()</code></pre>
+
+            <!-- Subsection: Exporting with Transparent Backgrounds -->
+            <h3>Exporting with Transparent Backgrounds</h3>
+            <p>You can save your plots with transparent backgrounds by setting the <code>transparent</code> parameter to
+                <code>True</code> in the <code>savefig()</code> function. Here's an example:
+            </p>
+            <pre><code>import matplotlib.pyplot as plt
+import numpy as np
+
+# Sample data
+x = np.linspace(0, 10, 100)
+y = np.tan(x)
+
+# Create a simple plot
+plt.plot(x, y)
+plt.title('Tangent Wave')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+
+# Save the plot with a transparent background
+plt.savefig('tangent_wave_transparent.png', transparent=True)
+plt.show()</code></pre>
+
+        </section>
+
+        <!-- Section: Animations -->
+        <section>
+            <h2>Animations</h2>
+
+            <!-- Subsection: Creating Animations Using FuncAnimation -->
+            <h3>Creating Animations Using FuncAnimation</h3>
+            <p>The <code>FuncAnimation</code> class in Matplotlib allows you to create animations by repeatedly calling
+                a function. Here's an example of how to create a simple sine wave animation:</p>
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# Prepare the figure and axis
+fig, ax = plt.subplots()
+x = np.linspace(0, 2 * np.pi, 100)
+line, = ax.plot(x, np.sin(x))
+
+# Function to update the plot
+def update(frame):
+    line.set_ydata(np.sin(x + frame / 10))  # Update the data
+    return line,
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=np.arange(0, 100), interval=50)
+
+# Display the animation
+plt.show()</code></pre>
+
+            <!-- Subsection: Saving Animations as GIFs or Videos -->
+            <h3>Saving Animations as GIFs or Videos</h3>
+            <p>You can save your animations in various formats, including GIF and video, using the <code>save</code>
+                method of the animation object. Here's an example:</p>
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+# Prepare the figure and axis
+fig, ax = plt.subplots()
+x = np.linspace(0, 2 * np.pi, 100)
+line, = ax.plot(x, np.sin(x))
+
+# Function to update the plot
+def update(frame):
+    line.set_ydata(np.sin(x + frame / 10))
+    return line,
+
+# Create the animation
+ani = FuncAnimation(fig, update, frames=np.arange(0, 100), interval=50)
+
+# Save the animation as a GIF
+ani.save('sine_wave_animation.gif', writer='pillow')
+
+# Save the animation as a video
+ani.save('sine_wave_animation.mp4', writer='ffmpeg')
+
+# Display the animation
+plt.show()</code></pre>
+
+        </section>
+
+
+        <!-- Section: Interactive Plots -->
+        <section>
+            <h2>Interactive Plots</h2>
+
+            <!-- Subsection: Enabling Interactivity -->
+            <h3>Enabling Interactivity with %matplotlib notebook or %matplotlib widget</h3>
+            <p>To enable interactive plotting in Jupyter notebooks, use:</p>
+            <pre><code>%matplotlib notebook</code></pre>
+            <p>This allows you to zoom and pan in your plots interactively.</p>
+
+            <!-- Subsection: Adding Sliders, Buttons, and Event Handling -->
+            <h3>Adding Sliders, Buttons, and Event Handling</h3>
+            <p>Interactive widgets can be added to plots using <code>matplotlib.widgets</code>. Here's an example:</p>
+            <pre><code>import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.widgets import Slider
+
+# Create a sample plot
+fig, ax = plt.subplots()
+plt.subplots_adjust(bottom=0.25)
+x = np.linspace(0, 10, 100)
+line, = plt.plot(x, np.sin(x))
+
+# Create a slider
+axcolor = 'lightgoldenrodyellow'
+ax_slider = plt.axes([0.2, 0.1, 0.65, 0.03], facecolor=axcolor)
+slider = Slider(ax_slider, 'Frequency', 0.1, 10.0, valinit=1.0)
+
+# Update function for the slider
+def update(val):
+    line.set_ydata(np.sin(val * x))
+    fig.canvas.draw_idle()
+
+slider.on_changed(update)
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Seaborn Integration -->
+        <section>
+            <h2>Seaborn Integration</h2>
+
+            <!-- Subsection: Using Seaborn with Matplotlib -->
+            <h3>Using Seaborn with Matplotlib</h3>
+            <p>Seaborn works well with Matplotlib and can enhance your plots. To use Seaborn, install it and import it:
+            </p>
+            <pre><code>import seaborn as sns
+
+# Example of a Seaborn plot
+sns.set(style="whitegrid")
+data = np.random.randn(100)
+sns.histplot(data, bins=30, kde=True)
+plt.show()</code></pre>
+
+            <!-- Subsection: Customizing Seaborn Plots with Matplotlib -->
+            <h3>Customizing Seaborn Plots with Matplotlib</h3>
+            <p>After creating a Seaborn plot, you can further customize it with Matplotlib commands:</p>
+            <pre><code>plt.title('Custom Title')
+plt.xlabel('Custom X-axis')
+plt.ylabel('Custom Y-axis')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Customization with Style Sheets -->
+        <section>
+            <h2>Customization with Style Sheets</h2>
+
+            <!-- Subsection: Applying Predefined Styles -->
+            <h3>Applying Predefined Styles (ggplot, seaborn, etc.)</h3>
+            <p>You can apply predefined styles to your plots easily:</p>
+            <pre><code>plt.style.use('ggplot')
+# Create your plots here</code></pre>
+
+            <!-- Subsection: Creating Custom Style Sheets -->
+            <h3>Creating Custom Style Sheets</h3>
+            <p>Custom styles can also be created in a `.mplstyle` file. Here's an example of a custom style:</p>
+            <pre><code>axes.titlesize: 16
+axes.labelsize: 14
+xtick.labelsize: 12
+ytick.labelsize: 12</code></pre>
+        </section>
+
+        <!-- Section: Working with Pandas -->
+        <section>
+            <h2>Working with Pandas</h2>
+
+            <!-- Subsection: Plotting Directly from Pandas DataFrames -->
+            <h3>Plotting Directly from Pandas DataFrames</h3>
+            <p>Pandas integrates well with Matplotlib, allowing for easy plotting:</p>
+            <pre><code>import pandas as pd
+
+# Create a DataFrame
+df = pd.DataFrame({
+    'x': np.arange(10),
+    'y': np.random.randn(10)
+})
+
+# Plotting directly
+df.plot(x='x', y='y', kind='line')
+plt.show()</code></pre>
+
+            <!-- Subsection: Customizing Pandas Plots with Matplotlib -->
+            <h3>Customizing Pandas Plots with Matplotlib</h3>
+            <p>You can customize Pandas plots using Matplotlib's functionalities:</p>
+            <pre><code>ax = df.plot(x='x', y='y', kind='bar')
+ax.set_title('Custom Title')
+plt.show()</code></pre>
+        </section>
+
+        <!-- Section: Tight Layouts and Space Adjustments -->
+        <section>
+            <h2>Tight Layouts and Space Adjustments</h2>
+
+            <!-- Subsection: tight_layout() to Avoid Overlapping -->
+            <h3>tight_layout() to Avoid Overlapping</h3>
+            <p>The <code>tight_layout()</code> function adjusts the padding between and around subplots:</p>
+            <pre><code>plt.tight_layout()</code></pre>
+
+            <!-- Subsection: Adjusting Spacing Between Subplots -->
+            <h3>Adjusting Spacing Between Subplots (subplots_adjust())</h3>
+            <p>Use <code>subplots_adjust()</code> to manually adjust spacing:</p>
+            <pre><code>plt.subplots_adjust(hspace=0.5, wspace=0.5)</code></pre>
+        </section>
+
+        <!-- Section: Handling Large Datasets -->
+        <section>
+            <h2>Handling Large Datasets</h2>
+
+            <!-- Subsection: Efficient Plotting with Large Datasets -->
+            <h3>Efficient Plotting with Large Datasets</h3>
+            <p>For large datasets, consider downsampling before plotting:</p>
+            <pre><code>large_data = np.random.randn(1000000)
+sampled_data = large_data[::100]  # Downsample
+plt.plot(sampled_data)</code></pre>
+
+            <!-- Subsection: Downsampling and Aggregating Data for Performance -->
+            <h3>Downsampling and Aggregating Data for Performance</h3>
+            <p>Use aggregations to summarize large datasets:</p>
+            <pre><code>aggregated_data = pd.Series(large_data).rolling(window=100).mean()
+plt.plot(aggregated_data)</code></pre>
+        </section>
+
+        <!-- Section: Custom Matplotlib Extensions -->
+        <section>
+            <h2>Custom Matplotlib Extensions</h2>
+
+            <!-- Subsection: Creating Custom Plot Types -->
+            <h3>Creating Custom Plot Types</h3>
+            <p>You can create your own custom plot types by extending Matplotlib classes. Here’s a simple example:</p>
+            <pre><code>from matplotlib.lines import Line2D
+
+class CustomPlot(Line2D):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        # Add custom functionality here</code></pre>
+
+            <!-- Subsection: Using Third-Party Extensions with Matplotlib -->
+            <h3>Using Third-Party Extensions with Matplotlib</h3>
+            <p>Extensions like <code>mplleaflet</code> can help create interactive maps:</p>
+            <pre><code>import mplleaflet
+mplleaflet.show()</code></pre>
+        </section>
+
+        <!-- Section: Matplotlib in Jupyter Notebooks -->
+        <section>
+            <h2>Matplotlib in Jupyter Notebooks</h2>
+
+            <!-- Subsection: Inline Plotting in Jupyter with %matplotlib inline -->
+            <h3>Inline Plotting in Jupyter with %matplotlib inline</h3>
+            <p>To display plots inline in Jupyter notebooks, use:</p>
+            <pre><code>%matplotlib inline</code></pre>
+
+            <!-- Subsection: Interactivity in Jupyter Notebooks -->
+            <h3>Interactivity in Jupyter Notebooks</h3>
+            <p>Interactivity can be enabled in Jupyter notebooks by using:</p>
+            <pre><code>%matplotlib notebook</code></pre>
+            <p>This allows for zooming and panning on the plots directly within the notebook.</p>
+        </section>
+
+
+
+
+
+
+    </main>
+    <footer>
+        <p>&copy; <span id="year"></span> Learning Platform</p>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

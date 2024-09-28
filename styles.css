@@ -1,0 +1,165 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header styling */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6200ea;
+    color: white;
+}
+
+header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 16px;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 900px;
+    /* Limit the main content width */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Section Styling */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+section:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #6200ea;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+}
+
+section p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Responsive Typography */
+section p,
+section h2 {
+    transition: font-size 0.3s ease-in-out;
+}
+
+pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+pre code {
+    font-size: 15px;
+    color: #d32f2f;
+}
+
+/* Link Styling */
+a {
+    color: #3f51b5;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #6200ea;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Media Query for Tablets */
+@media only screen and (max-width: 768px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 20px;
+    }
+
+    section p {
+        font-size: 14px;
+    }
+
+    pre {
+        padding: 10px;
+    }
+}
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 480px) {
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    section h2 {
+        font-size: 25px;
+    }
+
+    section p {
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    pre {
+        padding: 8px;
+    }
+}
