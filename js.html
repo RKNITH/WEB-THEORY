@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to JavaScript</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Introduction to JavaScript</h1>
+    </header>
+
+    <main>
+        <section>
+            <h2>What is JavaScript?</h2>
+            <p>JavaScript is a versatile, high-level programming language primarily used for creating interactive and
+                dynamic content on websites. It can manipulate web pages in real-time, manage multimedia, animate
+                images, and much more. JavaScript is also used in environments outside of browsers, such as in
+                server-side development with Node.js.</p>
+        </section>
+
+        <section>
+            <h2>JavaScript History and Versions</h2>
+            <p>JavaScript was created in 1995 by Brendan Eich while working at Netscape Communications. It was
+                originally called Mocha, then renamed to LiveScript, and finally to JavaScript. The standardization of
+                JavaScript is managed by ECMAScript (ES). Below are some key versions of ECMAScript:</p>
+            <ul>
+                <li>ES5 (2009): Major improvements and features like strict mode, JSON, and Array methods.</li>
+                <li>ES6 (2015): Introduced let/const, arrow functions, template literals, promises, classes, and
+                    modules.</li>
+                <li>ES7+ (2016+): Ongoing releases adding features such as async/await, object rest/spread, and more.
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Adding JavaScript to HTML</h2>
+            <p>There are three main ways to add JavaScript to an HTML document:</p>
+            <ul>
+                <li><strong>Inline JavaScript:</strong> Code is added directly inside an HTML element's event attribute
+                    (e.g., <code>onclick</code>). Example:</p>
+                    <pre><code>&lt;button onclick="alert('Hello, world!')"&gt;Click me&lt;/button&gt;</code></pre>
+                </li>
+                <li><strong>Internal JavaScript:</strong> Code is written inside the <code>&lt;script&gt;</code> tag in
+                    the HTML document.</li>
+                <pre><code>&lt;script&gt;
+alert('This is internal JavaScript.');
+&lt;/script&gt;</code></pre>
+                <li><strong>External JavaScript:</strong> Code is placed in a separate .js file and linked in the HTML
+                    using the <code>&lt;script&gt;</code> tag.</li>
+                <pre><code>&lt;script src="script.js"&gt;&lt;/script&gt;</code></pre>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Understanding the JavaScript Execution Environment</h2>
+            <p>JavaScript can run in two main environments:</p>
+            <ul>
+                <li><strong>Browser:</strong> JavaScript is executed directly in the browser using its JavaScript engine
+                    (e.g., V8 in Chrome).</li>
+                <li><strong>Node.js:</strong> JavaScript can also run server-side using Node.js, which is built on the
+                    V8 engine.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Variables (var, let, const)</h2>
+            <p>JavaScript variables are used to store data values. There are three ways to declare variables in
+                JavaScript:</p>
+            <ul>
+                <li><strong>var:</strong> The traditional way to declare variables. Variables declared with
+                    <code>var</code> are function-scoped and can be re-assigned and re-declared.
+                </li>
+                <li><strong>let:</strong> Introduced in ES6, <code>let</code> is block-scoped and can be re-assigned but
+                    not re-declared in the same scope.</li>
+                <li><strong>const:</strong> Variables declared with <code>const</code> are block-scoped and cannot be
+                    re-assigned or re-declared. They must be initialized at the time of declaration.</li>
+            </ul>
+            <pre><code>
+// var example
+var x = 5;
+x = 10;
+
+// let example
+let y = 15;
+y = 20;
+
+// const example
+const z = 25;
+// z = 30; // This will throw an error
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Data Types</h2>
+            <p>JavaScript supports two main categories of data types:</p>
+            <ul>
+                <li><strong>Primitive types:</strong> These are immutable data types such as <code>number</code>,
+                    <code>string</code>, <code>boolean</code>, <code>null</code>, <code>undefined</code>, and
+                    <code>symbol</code>.
+                </li>
+                <li><strong>Reference types:</strong> These are mutable data types such as <code>objects</code>,
+                    <code>arrays</code>, and <code>functions</code>. Reference types store references to memory
+                    locations where the actual data is held.
+                </li>
+            </ul>
+            <pre><code>
+// Primitive type example
+let age = 30;
+let name = "Alice";
+
+// Reference type example
+let person = {name: "John", age: 25};
+let numbers = [1, 2, 3];
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Operators</h2>
+            <p>JavaScript provides various types of operators:</p>
+            <ul>
+                <li><strong>Arithmetic Operators:</strong> Used for mathematical operations (+, -, *, /, %).</li>
+                <li><strong>Assignment Operators:</strong> Used to assign values to variables (=, +=, -=, *=, /=).</li>
+                <li><strong>Comparison Operators:</strong> Used to compare two values (==, ===, !=, !==, >, <,>=, <=).<
+                            /li>
+                <li><strong>Logical Operators:</strong> Used to perform logical operations (&&, ||, !).</li>
+                <li><strong>Bitwise Operators:</strong> Used to perform bit-level operations (&, |, ^, ~, <<,>>).</li>
+            </ul>
+            <pre><code>
+// Arithmetic example
+let sum = 5 + 10;
+
+// Comparison example
+let isEqual = (5 === 5); // true
+
+// Logical example
+let result = (5 > 3 && 10 > 8); // true
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Comments in JavaScript</h2>
+            <p>Comments are used to explain code or temporarily disable code. JavaScript supports both single-line and
+                multi-line comments.</p>
+            <pre><code>
+// This is a single-line comment
+
+/*
+ This is a
+ multi-line comment
+ */
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Type Coercion and Conversion</h2>
+            <p>JavaScript can automatically convert data types in certain situations, a behavior known as type coercion.
+                However, explicit conversion can also be performed.</p>
+            <ul>
+                <li><strong>Implicit Coercion:</strong> Automatically performed by JavaScript (e.g., adding a string and
+                    a number).</li>
+                <li><strong>Explicit Conversion:</strong> Manually converting data types using functions like
+                    <code>Number()</code>, <code>String()</code>, and <code>Boolean()</code>.
+                </li>
+            </ul>
+            <pre><code>
+// Implicit coercion
+let result = "5" + 5; // "55"
+
+// Explicit conversion
+let num = Number("5"); // 5
+let str = String(5); // "5"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Control Flow</h2>
+            <h3>Conditional Statements</h3>
+            <p>JavaScript provides several ways to control the flow of execution based on conditions:</p>
+            <ul>
+                <li><strong>if:</strong> Executes code if the condition is true.</li>
+                <li><strong>else:</strong> Executes code if the condition is false.</li>
+                <li><strong>else if:</strong> Specifies a new condition to test if the previous condition is false.</li>
+                <li><strong>switch:</strong> Selects one of many blocks of code to be executed based on a variable's
+                    value.</li>
+            </ul>
+            <pre><code>
+// if-else example
+let age = 18;
+if (age >= 18) {
+    console.log("Adult");
+} else {
+    console.log("Minor");
+}
+
+// switch example
+let day = 3;
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    default:
+        console.log("Other day");
+}
+            </code></pre>
+
+            <h3>Loops</h3>
+            <p>Loops allow for repeated execution of a block of code:</p>
+            <ul>
+                <li><strong>for:</strong> Executes a block of code a specific number of times.</li>
+                <li><strong>while:</strong> Repeats a block of code while a condition is true.</li>
+                <li><strong>do-while:</strong> Executes the block of code once, then repeats as long as the condition is
+                    true.</li>
+            </ul>
+            <pre><code>
+// for loop example
+for (let i = 0; i < 5; i++) {
+    console.log(i);
+}
+
+// while loop example
+let count = 0;
+while (count < 5) {
+    console.log(count);
+    count++;
+}
+
+// do-while loop example
+let num = 0;
+do {
+    console.log(num);
+    num++;
+} while (num < 5);
+            </code></pre>
+
+            <h3>Control Flow Keywords</h3>
+            <p>Control flow keywords are used to alter the normal flow of loops:</p>
+            <ul>
+                <li><strong>break:</strong> Exits the loop entirely.</li>
+                <li><strong>continue:</strong> Skips the rest of the current loop iteration and moves to the next
+                    iteration.</li>
+            </ul>
+            <pre><code>
+// break example
+for (let i = 0; i < 10; i++) {
+    if (i === 5) break;
+    console.log(i);
+}
+
+// continue example
+for (let i = 0; i < 10; i++) {
+    if (i === 5) continue;
+    console.log(i);
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Functions</h2>
+
+            <h3>Declaring Functions</h3>
+            <p>There are multiple ways to declare functions in JavaScript:</p>
+            <ul>
+                <li><strong>Function Declarations:</strong> Functions declared with the <code>function</code> keyword.
+                </li>
+                <li><strong>Function Expressions:</strong> Functions assigned to variables.</li>
+                <li><strong>Arrow Functions:</strong> A more concise syntax for writing functions, introduced in ES6.
+                    Arrow functions do not have their own <code>this</code>.</li>
+            </ul>
+            <pre><code>
+// Function Declaration
+function greet() {
+    return "Hello!";
+}
+
+// Function Expression
+const greetExpression = function() {
+    return "Hello!";
+};
+
+// Arrow Function
+const greetArrow = () => "Hello!";
+            </code></pre>
+
+            <h3>Function Parameters and Arguments</h3>
+            <p>Functions can take parameters, which act as placeholders for the values (arguments) that will be passed
+                into the function.</p>
+            <pre><code>
+function add(a, b) {
+    return a + b;
+}
+console.log(add(2, 3)); // 5
+            </code></pre>
+
+            <h3>Return Values</h3>
+            <p>Functions can return values using the <code>return</code> statement. If no <code>return</code> statement
+                is used, the function returns <code>undefined</code> by default.</p>
+            <pre><code>
+function square(x) {
+    return x * x;
+}
+console.log(square(4)); // 16
+            </code></pre>
+
+            <h3>Default Parameters</h3>
+            <p>Default parameters allow you to initialize function parameters with default values if no argument or
+                <code>undefined</code> is passed.
+            </p>
+            <pre><code>
+function greet(name = "Guest") {
+    return "Hello, " + name;
+}
+console.log(greet()); // "Hello, Guest"
+            </code></pre>
+
+            <h3>Rest Parameters</h3>
+            <p>The rest parameter <code>...rest</code> allows a function to accept an indefinite number of arguments as
+                an array.</p>
+            <pre><code>
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+console.log(sum(1, 2, 3, 4)); // 10
+            </code></pre>
+
+            <h3>Anonymous Functions and IIFE</h3>
+            <p>An anonymous function is a function without a name, often used in function expressions. An IIFE
+                (Immediately Invoked Function Expression) is an anonymous function that runs immediately after it is
+                defined.</p>
+            <pre><code>
+// Anonymous Function Expression
+const anon = function() {
+    console.log("Anonymous function");
+};
+
+// IIFE Example
+(function() {
+    console.log("IIFE running!");
+})();
+            </code></pre>
+
+            <h3>Callbacks</h3>
+            <p>A callback is a function passed into another function as an argument, which is then invoked inside the
+                outer function.</p>
+            <pre><code>
+function doSomething(callback) {
+    callback();
+}
+doSomething(() => console.log("Callback function executed"));
+            </code></pre>
+
+            <h3>Higher-Order Functions</h3>
+            <p>A higher-order function is a function that either takes one or more functions as arguments, or returns a
+                function as its result.</p>
+            <pre><code>
+function higherOrder(fn) {
+    return fn();
+}
+
+higherOrder(() => console.log("This is a higher-order function"));
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Scope and Hoisting</h2>
+
+            <h3>Function Scope</h3>
+            <p>In JavaScript, variables declared inside a function are function-scoped, meaning they can only be
+                accessed within that function.</p>
+            <pre><code>
+function myFunction() {
+    let message = "Hello";
+    console.log(message); // Accessible inside the function
+}
+console.log(message); // Error: message is not defined
+            </code></pre>
+
+            <h3>Block Scope with let and const</h3>
+            <p>Variables declared with <code>let</code> or <code>const</code> are block-scoped, meaning they are only
+                accessible within the block in which they are defined (e.g., within <code>{}</code>).</p>
+            <pre><code>
+if (true) {
+    let blockVar = "Block Scoped";
+    console.log(blockVar); // Accessible inside the block
+}
+console.log(blockVar); // Error: blockVar is not defined
+            </code></pre>
+
+            <h3>Lexical Scope</h3>
+            <p>Lexical scope means that the scope of a variable is determined by the position of the function or block
+                in which it is defined within the source code. Inner functions can access variables of their parent
+                functions.</p>
+            <pre><code>
+function outer() {
+    let outerVar = "Outer";
+
+    function inner() {
+        console.log(outerVar); // Inner function can access outerVar
+    }
+
+    inner();
+}
+outer(); // Logs "Outer"
+            </code></pre>
+
+            <h3>Hoisting</h3>
+            <p>In JavaScript, variable and function declarations are "hoisted" to the top of their scope before code
+                execution. However, <strong>let</strong> and <strong>const</strong> variables are not initialized until
+                their definition is encountered.</p>
+            <ul>
+                <li><strong>Function Hoisting:</strong> Function declarations are hoisted, so they can be called before
+                    they are defined.</li>
+                <li><strong>Variable Hoisting:</strong> Variable declarations are hoisted, but their initialization
+                    remains in place.</li>
+            </ul>
+            <pre><code>
+// Function hoisting example
+sayHello(); // Works due to hoisting
+function sayHello() {
+    console.log("Hello");
+}
+
+// Variable hoisting example
+console.log(hoistedVar); // Undefined (hoisted, but not initialized)
+var hoistedVar = "Hoisted";
+            </code></pre>
+
+            <h3>Closures</h3>
+            <p>A closure is a feature in JavaScript where an inner function has access to the outer (enclosing)
+                function’s variables, even after the outer function has returned.</p>
+            <pre><code>
+function outer() {
+    let outerVar = "Outer";
+
+    return function inner() {
+        console.log(outerVar); // Still has access to outerVar
+    };
+}
+
+const innerFunction = outer();
+innerFunction(); // Logs "Outer"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Arrays</h2>
+
+            <h3>Declaring Arrays</h3>
+            <p>Arrays in JavaScript are ordered collections of items. You can declare arrays using square brackets.</p>
+            <pre><code>
+// Declaring an array
+let numbers = [1, 2, 3, 4, 5];
+let fruits = ["apple", "banana", "orange"];
+            </code></pre>
+
+            <h3>Array Methods</h3>
+            <p>JavaScript provides a variety of methods to manipulate arrays:</p>
+            <ul>
+                <li><strong>push:</strong> Adds an element to the end of the array.</li>
+                <li><strong>pop:</strong> Removes the last element of the array.</li>
+                <li><strong>shift:</strong> Removes the first element of the array.</li>
+                <li><strong>unshift:</strong> Adds an element to the beginning of the array.</li>
+                <li><strong>map:</strong> Creates a new array by applying a function to each element of the array.</li>
+                <li><strong>filter:</strong> Creates a new array with all elements that pass a test.</li>
+                <li><strong>reduce:</strong> Reduces the array to a single value by applying a function to each element
+                    and an accumulator.</li>
+            </ul>
+            <pre><code>
+// Array methods example
+let numbers = [1, 2, 3, 4];
+
+// push and pop
+numbers.push(5); // [1, 2, 3, 4, 5]
+numbers.pop();   // [1, 2, 3, 4]
+
+// shift and unshift
+numbers.shift();  // [2, 3, 4]
+numbers.unshift(1); // [1, 2, 3, 4]
+
+// map
+let doubled = numbers.map(num => num * 2); // [2, 4, 6, 8]
+
+// filter
+let even = numbers.filter(num => num % 2 === 0); // [2, 4]
+
+// reduce
+let sum = numbers.reduce((acc, num) => acc + num, 0); // 10
+            </code></pre>
+
+            <h3>Array Destructuring</h3>
+            <p>Array destructuring allows you to unpack values from arrays into distinct variables.</p>
+            <pre><code>
+// Array destructuring example
+let [first, second, third] = [1, 2, 3];
+console.log(first); // 1
+console.log(second); // 2
+console.log(third); // 3
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Objects</h2>
+
+            <h3>Creating Objects</h3>
+            <p>Objects in JavaScript are collections of key-value pairs, where keys are strings (or Symbols) and values
+                can be of any type.</p>
+            <pre><code>
+// Creating an object
+let person = {
+    name: "John",
+    age: 30,
+    greet: function() {
+        console.log("Hello, my name is " + this.name);
+    }
+};
+            </code></pre>
+
+            <h3>Object Properties and Methods</h3>
+            <p>Object properties are accessed using dot notation or bracket notation. You can also define methods inside
+                objects, which are functions tied to the object.</p>
+            <pre><code>
+// Accessing properties
+console.log(person.name); // "John"
+console.log(person["age"]); // 30
+
+// Invoking methods
+person.greet(); // "Hello, my name is John"
+            </code></pre>
+
+            <h3>Object Destructuring</h3>
+            <p>Object destructuring allows you to extract values from objects and assign them to variables.</p>
+            <pre><code>
+// Object destructuring
+let {name, age} = person;
+console.log(name); // "John"
+console.log(age); // 30
+            </code></pre>
+
+            <h3>Object Methods</h3>
+            <p>JavaScript provides several methods to manipulate objects:</p>
+            <ul>
+                <li><strong>Object.assign:</strong> Copies properties from one or more objects to a target object.</li>
+                <li><strong>Object.keys:</strong> Returns an array of the object's keys.</li>
+                <li><strong>Object.values:</strong> Returns an array of the object's values.</li>
+            </ul>
+            <pre><code>
+// Object.assign example
+let target = {a: 1};
+let source = {b: 2, c: 3};
+Object.assign(target, source); // target becomes {a: 1, b: 2, c: 3}
+
+// Object.keys example
+console.log(Object.keys(person)); // ["name", "age", "greet"]
+
+// Object.values example
+console.log(Object.values(person)); // ["John", 30, function]
+            </code></pre>
+
+            <h3>this Keyword in Objects</h3>
+            <p>The <code>this</code> keyword in an object refers to the object itself and is commonly used to access
+                properties and methods within the object.</p>
+            <pre><code>
+let car = {
+    brand: "Toyota",
+    model: "Corolla",
+    showInfo: function() {
+        console.log("This car is a " + this.brand + " " + this.model);
+    }
+};
+car.showInfo(); // "This car is a Toyota Corolla"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Sets and Maps</h2>
+
+            <h3>Creating Sets and Maps</h3>
+            <p><strong>Sets</strong> are collections of unique values, while <strong>Maps</strong> are collections of
+                key-value pairs where keys can be of any type.</p>
+            <pre><code>
+// Creating a set
+let mySet = new Set([1, 2, 3, 4]);
+
+// Creating a map
+let myMap = new Map([
+    ["name", "John"],
+    ["age", 30]
+]);
+            </code></pre>
+
+            <h3>Adding and Removing Elements</h3>
+            <p>You can add or remove elements from Sets and Maps using the <code>add</code>, <code>delete</code>, and
+                <code>set</code> methods.
+            </p>
+            <pre><code>
+// Set operations
+mySet.add(5); // Adds 5 to the set
+mySet.delete(1); // Removes 1 from the set
+
+// Map operations
+myMap.set("job", "Developer"); // Adds a new key-value pair
+myMap.delete("age"); // Removes the key "age"
+            </code></pre>
+
+            <h3>Iterating Through Sets and Maps</h3>
+            <p>Both Sets and Maps can be iterated over using loops such as <code>for...of</code> or the
+                <code>forEach</code> method.
+            </p>
+            <pre><code>
+// Iterating through a set
+for (let value of mySet) {
+    console.log(value); // Logs each value in the set
+}
+
+// Iterating through a map
+myMap.forEach((value, key) => {
+    console.log(key + ": " + value); // Logs each key-value pair in the map
+});
+            </code></pre>
+        </section>
+
+
+        <section>
+            <h2>String Manipulation</h2>
+
+            <h3>String Methods</h3>
+            <p>JavaScript provides a variety of methods to manipulate strings:</p>
+            <ul>
+                <li><strong>concat:</strong> Combines two or more strings.</li>
+                <li><strong>slice:</strong> Extracts a section of a string and returns it as a new string.</li>
+                <li><strong>substring:</strong> Similar to <code>slice</code>, but cannot accept negative indices.</li>
+                <li><strong>split:</strong> Splits a string into an array of substrings.</li>
+                <li><strong>replace:</strong> Replaces a substring with another value.</li>
+                <li><strong>toUpperCase:</strong> Converts all characters in a string to uppercase.</li>
+                <li><strong>toLowerCase:</strong> Converts all characters in a string to lowercase.</li>
+            </ul>
+            <pre><code>
+// String methods example
+let str = "JavaScript is awesome";
+
+// concat
+let result = str.concat(" and fun!");
+console.log(result); // "JavaScript is awesome and fun!"
+
+// slice
+console.log(str.slice(0, 10)); // "JavaScript"
+
+// substring
+console.log(str.substring(4, 10)); // "Script"
+
+// split
+console.log(str.split(" ")); // ["JavaScript", "is", "awesome"]
+
+// replace
+console.log(str.replace("awesome", "great")); // "JavaScript is great"
+
+// toUpperCase and toLowerCase
+console.log(str.toUpperCase()); // "JAVASCRIPT IS AWESOME"
+console.log(str.toLowerCase()); // "javascript is awesome"
+            </code></pre>
+
+            <h3>Template Literals and Interpolation</h3>
+            <p>Template literals, introduced in ES6, allow embedded expressions and multi-line strings. You can use
+                backticks <code>`</code> and <code>${}</code> for interpolation.</p>
+            <pre><code>
+// Template literal example
+let name = "John";
+let age = 30;
+let message = `Hello, my name is ${name} and I am ${age} years old.`;
+console.log(message); // "Hello, my name is John and I am 30 years old."
+            </code></pre>
+
+            <h3>Escape Characters</h3>
+            <p>Escape characters allow you to include special characters in strings, such as quotes or newlines.</p>
+            <pre><code>
+// Escape characters
+let text = "He said, \"JavaScript is fun!\"";
+let multiline = "This is line 1\nThis is line 2";
+console.log(text); // He said, "JavaScript is fun!"
+console.log(multiline); // This is line 1 (newline) This is line 2
+            </code></pre>
+
+            <h3>String Immutability</h3>
+            <p>Strings in JavaScript are immutable, meaning once a string is created, it cannot be changed. Any
+                operation on a string creates a new string.</p>
+            <pre><code>
+// String immutability
+let original = "Hello";
+original[0] = "h"; // This does nothing
+console.log(original); // "Hello" (unchanged)
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Event Handling</h2>
+
+            <h3>Understanding Events in JavaScript</h3>
+            <p>Events in JavaScript are actions or occurrences that happen in the browser, such as clicks, keystrokes,
+                or mouse movements.</p>
+
+            <h3>Event Listeners</h3>
+            <p>You can add or remove event listeners to respond to user interactions using <code>addEventListener</code>
+                and <code>removeEventListener</code>.</p>
+            <pre><code>
+// Event listener example
+let button = document.getElementById("myButton");
+
+function handleClick() {
+    console.log("Button clicked!");
+}
+
+button.addEventListener("click", handleClick);
+
+// To remove the event listener
+button.removeEventListener("click", handleClick);
+            </code></pre>
+
+            <h3>Event Object</h3>
+            <p>When an event occurs, an event object is passed to the event handler function. This object contains
+                information about the event, such as the target element.</p>
+            <pre><code>
+// Event object example
+button.addEventListener("click", function(event) {
+    console.log("Event target:", event.target); // The element that was clicked
+});
+            </code></pre>
+
+            <h3>Event Delegation</h3>
+            <p>Event delegation is a technique in which a single event listener is used on a parent element to handle
+                events from its child elements. This is efficient when you have many child elements that need to respond
+                to events.</p>
+            <pre><code>
+// Event delegation example
+let list = document.getElementById("myList");
+
+list.addEventListener("click", function(event) {
+    if (event.target.tagName === "LI") {
+        console.log("List item clicked:", event.target.textContent);
+    }
+});
+            </code></pre>
+
+            <h3>Common Browser Events</h3>
+            <p>Here are some commonly used browser events:</p>
+            <ul>
+                <li><strong>click:</strong> Triggered when an element is clicked.</li>
+                <li><strong>keypress:</strong> Triggered when a key is pressed.</li>
+                <li><strong>mouseover:</strong> Triggered when the mouse is moved over an element.</li>
+            </ul>
+            <pre><code>
+// Click event example
+button.addEventListener("click", function() {
+    console.log("Button was clicked!");
+});
+
+// Keypress event example
+document.addEventListener("keypress", function(event) {
+    console.log("Key pressed:", event.key);
+});
+            </code></pre>
+
+            <h3>Preventing Default Behavior</h3>
+            <p>The <code>event.preventDefault()</code> method prevents the default behavior of an element, such as
+                preventing a form from submitting or a link from being followed.</p>
+            <pre><code>
+// Preventing default behavior example
+let link = document.getElementById("myLink");
+
+link.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the link from being followed
+    console.log("Default behavior prevented");
+});
+            </code></pre>
+
+            <h3>Stopping Propagation</h3>
+            <p>The <code>event.stopPropagation()</code> method prevents further propagation of the event in the
+                capturing and bubbling phases.</p>
+            <pre><code>
+// Stopping propagation example
+let outerDiv = document.getElementById("outer");
+let innerDiv = document.getElementById("inner");
+
+outerDiv.addEventListener("click", function() {
+    console.log("Outer div clicked");
+});
+
+innerDiv.addEventListener("click", function(event) {
+    event.stopPropagation(); // Prevents the outer div from handling this click
+    console.log("Inner div clicked");
+});
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>DOM (Document Object Model) Manipulation</h2>
+
+            <h3>DOM Hierarchy</h3>
+            <p>The Document Object Model (DOM) represents the structure of an HTML document as a tree of nodes.
+                Elements, attributes, and text are all nodes in this hierarchy.</p>
+            <pre><code>
+// Example of DOM hierarchy
+document // The root of the DOM tree
+    -> document.documentElement // &lt;html&gt; element
+        -> document.body // &lt;body&gt; element
+            -> document.body.childNodes // Child nodes of the body
+            </code></pre>
+
+            <h3>Accessing Elements</h3>
+            <p>You can access DOM elements using methods like <code>getElementById</code>, <code>querySelector</code>,
+                <code>getElementsByClassName</code>, and more.
+            </p>
+            <pre><code>
+// Accessing elements example
+let title = document.getElementById("title");
+let firstParagraph = document.querySelector("p");
+let allButtons = document.getElementsByClassName("button");
+            </code></pre>
+
+            <h3>Modifying Elements</h3>
+            <p>You can modify the text content, attributes, and styles of DOM elements.</p>
+            <pre><code>
+// Modifying text content
+title.textContent = "New Title";
+
+// Modifying attributes
+firstParagraph.setAttribute("id", "intro");
+
+// Modifying styles
+title.style.color = "blue";
+title.style.fontSize = "24px";
+            </code></pre>
+
+            <h3>Creating and Appending Elements</h3>
+            <p>You can create new DOM elements and append them to the document.</p>
+            <pre><code>
+// Creating and appending an element
+let newDiv = document.createElement("div");
+newDiv.textContent = "This is a new div";
+document.body.appendChild(newDiv);
+            </code></pre>
+
+            <h3>Removing Elements from the DOM</h3>
+            <p>You can remove elements from the DOM using <code>removeChild</code> or <code>remove</code> methods.</p>
+            <pre><code>
+// Removing an element
+document.body.removeChild(newDiv);
+            </code></pre>
+
+            <h3>Traversing the DOM</h3>
+            <p>You can navigate through the DOM using properties like <code>parentNode</code>, <code>childNodes</code>,
+                <code>nextSibling</code>, and <code>previousSibling</code>.
+            </p>
+            <pre><code>
+// Traversing the DOM
+let parent = title.parentNode; // Get the parent node
+let firstChild = document.body.childNodes[0]; // Get the first child node of body
+let nextElement = title.nextSibling; // Get the next sibling of the title element
+            </code></pre>
+
+            <h3>Working with Forms and Input Elements</h3>
+            <p>You can manipulate forms and input elements in the DOM by accessing their values and attributes.</p>
+            <pre><code>
+// Accessing form elements
+let input = document.querySelector("input");
+console.log(input.value); // Get the value of the input field
+
+// Modifying form elements
+input.value = "New value"; // Set a new value
+input.setAttribute("placeholder", "Enter text");
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Asynchronous JavaScript</h2>
+
+            <h3>Callbacks</h3>
+            <p>A callback is a function that is passed as an argument to another function and is executed after some
+                operation completes.</p>
+            <pre><code>
+// Callback example
+function fetchData(callback) {
+    setTimeout(() => {
+        let data = { name: "John", age: 30 };
+        callback(data); // Call the callback function with the data
+    }, 1000);
+}
+
+fetchData(function(data) {
+    console.log("Received data:", data);
+});
+            </code></pre>
+
+            <h3>Promises</h3>
+            <p>A Promise represents an asynchronous operation that can either resolve or reject. Promises have methods
+                like <code>then</code>, <code>catch</code>, and <code>finally</code>.</p>
+            <pre><code>
+// Promise example
+let promise = new Promise((resolve, reject) => {
+    let success = true;
+    
+    if (success) {
+        resolve("Operation successful");
+    } else {
+        reject("Operation failed");
+    }
+});
+
+promise
+    .then(result => {
+        console.log(result); // "Operation successful"
+    })
+    .catch(error => {
+        console.log(error); // "Operation failed"
+    })
+    .finally(() => {
+        console.log("Promise completed");
+    });
+            </code></pre>
+
+            <h3>Async/Await Syntax</h3>
+            <p>The <code>async</code> and <code>await</code> syntax allows you to write asynchronous code in a more
+                readable way, as if you were using synchronous code.</p>
+            <pre><code>
+// Async/await example
+async function fetchData() {
+    try {
+        let result = await promise; // Wait for the promise to resolve
+        console.log(result); // "Operation successful"
+    } catch (error) {
+        console.log(error); // "Operation failed"
+    }
+}
+
+fetchData();
+            </code></pre>
+
+            <h3>Fetch API</h3>
+            <p>The Fetch API is used to send HTTP requests and handle responses. It returns a Promise that resolves to
+                the response object.</p>
+            <pre><code>
+// Fetch API example
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json()) // Parse the JSON response
+    .then(data => {
+        console.log("Fetched data:", data);
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+    });
+            </code></pre>
+
+            <h3>Handling Errors with Promises</h3>
+            <p>You can handle errors in promises using the <code>catch</code> method. This is useful for handling any
+                issues in asynchronous operations.</p>
+            <pre><code>
+// Handling errors with promises
+promise
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.error("Error occurred:", error);
+    });
+            </code></pre>
+
+            <h3>Promise Chaining</h3>
+            <p>Promises can be chained together using the <code>then</code> method, where the result of one promise is
+                passed to the next.</p>
+            <pre><code>
+// Promise chaining example
+fetch("https://jsonplaceholder.typicode.com/posts")
+    .then(response => response.json())
+    .then(posts => {
+        console.log("Posts fetched:", posts);
+        return fetch("https://jsonplaceholder.typicode.com/users");
+    })
+    .then(response => response.json())
+    .then(users => {
+        console.log("Users fetched:", users);
+    })
+    .catch(error => {
+        console.error("Error fetching data:", error);
+    });
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Understanding Object Prototypes</h2>
+            <p>In JavaScript, every object has a prototype. A prototype is another object that the original object
+                inherits properties and methods from. This is the basis of JavaScript's prototypal inheritance.</p>
+            <pre><code>
+// Prototypes example
+let person = {
+    greet: function() {
+        console.log("Hello!");
+    }
+};
+
+// Create another object using the prototype
+let student = Object.create(person);
+student.study = function() {
+    console.log("Studying...");
+};
+
+student.greet(); // "Hello!" (inherited from person)
+student.study(); // "Studying..."
+            </code></pre>
+
+            <h3>Constructor Functions</h3>
+            <p>Constructor functions are used to create multiple objects with the same properties and methods. They act
+                as blueprints for object creation.</p>
+            <pre><code>
+// Constructor function example
+function Person(name, age) {
+    this.name = name;
+    this.age = age;
+}
+
+Person.prototype.greet = function() {
+    console.log(`Hello, my name is ${this.name}`);
+};
+
+let john = new Person("John", 30);
+let jane = new Person("Jane", 25);
+
+john.greet(); // "Hello, my name is John"
+jane.greet(); // "Hello, my name is Jane"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>ES6 Classes</h2>
+            <p>In ES6, classes were introduced as a syntactical sugar over the existing prototypal inheritance. They
+                provide a cleaner, more familiar way to define constructors and inheritance.</p>
+
+            <h3>Class and Constructor</h3>
+            <p>Classes in JavaScript are defined using the <code>class</code> keyword. The <code>constructor</code>
+                method is used to initialize object properties.</p>
+            <pre><code>
+// ES6 class and constructor example
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    greet() {
+        console.log(`Hello, I am ${this.name}`);
+    }
+}
+
+let mike = new Person("Mike", 40);
+mike.greet(); // "Hello, I am Mike"
+            </code></pre>
+
+            <h3>Extends and Super (Inheritance)</h3>
+            <p>Inheritance in JavaScript classes is done using the <code>extends</code> keyword. The <code>super</code>
+                keyword is used to call the constructor of the parent class.</p>
+            <pre><code>
+// Inheritance with classes
+class Student extends Person {
+    constructor(name, age, grade) {
+        super(name, age); // Call the parent class constructor
+        this.grade = grade;
+    }
+
+    study() {
+        console.log(`${this.name} is studying in grade ${this.grade}`);
+    }
+}
+
+let anna = new Student("Anna", 18, "12th");
+anna.greet(); // "Hello, I am Anna"
+anna.study(); // "Anna is studying in grade 12th"
+            </code></pre>
+
+            <h3><code>this</code> in Classes and Objects</h3>
+            <p>In JavaScript, <code>this</code> refers to the context in which a function is called. Inside a class,
+                <code>this</code> refers to the instance of the class. In global context, <code>this</code> refers to
+                the global object (or <code>undefined</code> in strict mode).
+            </p>
+            <pre><code>
+// 'this' in a class method
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise`);
+    }
+}
+
+let dog = new Animal("Dog");
+dog.speak(); // "Dog makes a noise"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Inheritance</h2>
+            <p>Inheritance allows one class (or object) to inherit properties and methods from another. This is useful
+                for reusability and organizing code hierarchically.</p>
+            <pre><code>
+// Example of inheritance
+class Employee extends Person {
+    constructor(name, age, jobTitle) {
+        super(name, age);
+        this.jobTitle = jobTitle;
+    }
+
+    work() {
+        console.log(`${this.name} is working as a ${this.jobTitle}`);
+    }
+}
+
+let mark = new Employee("Mark", 32, "Software Developer");
+mark.work(); // "Mark is working as a Software Developer"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Method Overriding</h2>
+            <p>Method overriding occurs when a subclass defines a method with the same name as a method in its
+                superclass. The subclass method will override the superclass method when called on an instance of the
+                subclass.</p>
+            <pre><code>
+// Method overriding example
+class Bird extends Animal {
+    speak() {
+        console.log(`${this.name} chirps`);
+    }
+}
+
+let parrot = new Bird("Parrot");
+parrot.speak(); // "Parrot chirps"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Getters and Setters</h2>
+            <p>Getters and setters are special methods that allow you to define how to access and modify properties of
+                an object.</p>
+            <pre><code>
+// Getters and setters example
+class Car {
+    constructor(brand) {
+        this._brand = brand;
+    }
+
+    get brand() {
+        return this._brand;
+    }
+
+    set brand(value) {
+        if (value.length > 0) {
+            this._brand = value;
+        }
+    }
+}
+
+let car = new Car("Toyota");
+console.log(car.brand); // "Toyota"
+car.brand = "Honda";
+console.log(car.brand); // "Honda"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Static Methods and Properties</h2>
+            <p>Static methods and properties belong to the class itself, rather than to instances of the class. They are
+                often used for utility functions or constants.</p>
+            <pre><code>
+// Static method and property example
+class MathUtils {
+    static PI = 3.14159;
+
+    static calculateCircumference(radius) {
+        return 2 * MathUtils.PI * radius;
+    }
+}
+
+console.log(MathUtils.calculateCircumference(10)); // 62.8318
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Factory Functions</h2>
+            <p>A factory function is a function that returns a new object, often used as an alternative to constructor
+                functions or classes. They are useful for creating multiple objects with similar properties and methods.
+            </p>
+            <pre><code>
+// Factory function example
+function createPerson(name, age) {
+    return {
+        name,
+        age,
+        greet() {
+            console.log(`Hi, I'm ${name} and I'm ${age} years old.`);
+        }
+    };
+}
+
+let person1 = createPerson("Alice", 28);
+let person2 = createPerson("Bob", 35);
+
+person1.greet(); // "Hi, I'm Alice and I'm 28 years old."
+person2.greet(); // "Hi, I'm Bob and I'm 35 years old."
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Error Handling</h2>
+
+            <h3>Try-Catch Blocks</h3>
+            <p>The <code>try</code> block contains code that may throw an error. If an error occurs, the
+                <code>catch</code> block will execute, allowing you to handle the error gracefully.
+            </p>
+            <pre><code>
+// Try-catch example
+try {
+    let result = 10 / 0;
+    console.log(result);
+} catch (error) {
+    console.log("An error occurred:", error);
+}
+            </code></pre>
+
+            <h3>Throwing Custom Errors</h3>
+            <p>You can throw custom errors in JavaScript using the <code>throw</code> statement. This allows you to
+                create specific error messages for different situations.</p>
+            <pre><code>
+// Throwing a custom error
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Division by zero is not allowed");
+    }
+    return a / b;
+}
+
+try {
+    let result = divide(10, 0);
+    console.log(result);
+} catch (error) {
+    console.error("Custom Error:", error.message);
+}
+            </code></pre>
+
+            <h3>Error Objects</h3>
+            <p>JavaScript provides built-in error objects such as <code>Error</code>, <code>TypeError</code>,
+                <code>SyntaxError</code>, and more. These are used to represent different types of errors.
+            </p>
+            <pre><code>
+// Error objects example
+try {
+    null.toString();
+} catch (error) {
+    if (error instanceof TypeError) {
+        console.error("TypeError occurred:", error.message);
+    } else {
+        console.error("An error occurred:", error.message);
+    }
+}
+            </code></pre>
+
+            <h3>Promises and Error Handling</h3>
+            <p>Promises handle asynchronous operations. Errors in promises can be caught using the <code>catch</code>
+                method.</p>
+            <pre><code>
+// Error handling with promises
+let promise = new Promise((resolve, reject) => {
+    let success = false;
+    if (success) {
+        resolve("Operation successful");
+    } else {
+        reject("Operation failed");
+    }
+});
+
+promise
+    .then(result => console.log(result))
+    .catch(error => console.error("Promise Error:", error));
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>JavaScript Modules</h2>
+
+            <h3>What are Modules?</h3>
+            <p>Modules in JavaScript allow you to break down your code into smaller, reusable components. This helps in
+                organizing and maintaining larger codebases.</p>
+
+            <h3>ES6 Module Syntax</h3>
+            <p>ES6 introduced native module syntax using <code>import</code> and <code>export</code> keywords. You can
+                import and export variables, functions, and classes between different JavaScript files.</p>
+            <pre><code>
+// Exporting in module.js
+export const name = "Alice";
+export function greet() {
+    console.log("Hello, world!");
+}
+
+// Importing in another file
+import { name, greet } from './module.js';
+console.log(name); // "Alice"
+greet(); // "Hello, world!"
+            </code></pre>
+
+            <h3>Default Exports vs Named Exports</h3>
+            <p>You can export one default value per module and many named exports. Default exports can be imported with
+                any name, while named exports must be imported with their exact name.</p>
+            <pre><code>
+// Default export
+export default function sayHello() {
+    console.log("Hello!");
+}
+
+// Named export
+export const age = 25;
+
+// Importing default and named exports
+import sayHello, { age } from './module.js';
+sayHello(); // "Hello!"
+console.log(age); // 25
+            </code></pre>
+
+            <h3>Module Bundlers</h3>
+            <p>Module bundlers like Webpack and Parcel are tools that bundle JavaScript modules and their dependencies
+                into a single file or smaller chunks. They are especially useful for organizing larger projects.</p>
+            <pre><code>
+// Example of using Webpack to bundle modules
+// Install Webpack: npm install webpack webpack-cli --save-dev
+
+// In webpack.config.js:
+module.exports = {
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: __dirname + '/dist',
+    }
+};
+
+// Running Webpack: npx webpack --config webpack.config.js
+            </code></pre>
+
+            <h3>Working with Modules in Node.js (CommonJS)</h3>
+            <p>In Node.js, the module system is based on CommonJS. Instead of using <code>import</code> and
+                <code>export</code>, you use <code>require</code> to import and <code>module.exports</code> to export.
+            </p>
+            <pre><code>
+// module.js (CommonJS syntax)
+const name = "John";
+module.exports = name;
+
+// app.js (CommonJS syntax)
+const name = require('./module');
+console.log(name); // "John"
+            </code></pre>
+        </section>
+        <section>
+            <h2>JavaScript and the Browser</h2>
+
+            <h3>Browser Object Model (BOM)</h3>
+            <p>The Browser Object Model (BOM) provides access to the browser's features and window objects. This allows
+                developers to interact with the browser's properties and manipulate them.</p>
+
+            <h3>Window Object</h3>
+            <p>The <code>window</code> object represents the browser window and is the global object in client-side
+                JavaScript. It contains properties and methods to control the browser.</p>
+            <pre><code>
+// Example of window object
+console.log(window.innerWidth); // Get window width
+console.log(window.innerHeight); // Get window height
+
+// Alert example
+window.alert("Hello, this is an alert!");
+            </code></pre>
+
+            <h3>Document Object</h3>
+            <p>The <code>document</code> object represents the HTML document that is displayed in the window. It allows
+                you to manipulate the DOM (Document Object Model).</p>
+            <pre><code>
+// Example of document object
+console.log(document.title); // Get the title of the document
+document.body.style.backgroundColor = "lightblue"; // Change background color
+            </code></pre>
+
+            <h3>Navigator Object</h3>
+            <p>The <code>navigator</code> object provides information about the browser, such as its name, version, and
+                the user's operating system.</p>
+            <pre><code>
+// Example of navigator object
+console.log(navigator.userAgent); // Get browser details
+console.log(navigator.language); // Get browser language
+            </code></pre>
+
+            <h3>Screen Object</h3>
+            <p>The <code>screen</code> object contains information about the user's screen, including its width and
+                height.</p>
+            <pre><code>
+// Example of screen object
+console.log(screen.width); // Get screen width
+console.log(screen.height); // Get screen height
+            </code></pre>
+
+            <h3>History Object</h3>
+            <p>The <code>history</code> object allows you to manipulate the browser's session history. You can navigate
+                forward and backward through the history.</p>
+            <pre><code>
+// Example of history object
+history.back(); // Go back to the previous page
+history.forward(); // Go forward to the next page
+            </code></pre>
+
+            <h3>Location Object</h3>
+            <p>The <code>location</code> object allows you to manipulate the URL of the current page.</p>
+            <pre><code>
+// Example of location object
+console.log(location.href); // Get the current URL
+location.href = "https://www.example.com"; // Redirect to another page
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Event Loop and Asynchronous Behavior</h2>
+
+            <h3>JavaScript Execution Context</h3>
+            <p>JavaScript runs in a single-threaded environment, meaning only one task is executed at a time. The
+                execution context defines the environment in which the JavaScript code is executed.</p>
+
+            <h3>Call Stack and Event Loop</h3>
+            <p>The <strong>call stack</strong> is a data structure that keeps track of the execution of function calls.
+                The <strong>event loop</strong> continuously checks the call stack and task queues to handle
+                asynchronous tasks.</p>
+            <pre><code>
+// Example: Call stack and asynchronous behavior
+console.log("Start");
+
+setTimeout(() => {
+    console.log("Callback executed");
+}, 2000);
+
+console.log("End");
+            </code></pre>
+
+            <h3>Task Queue (Macrotasks and Microtasks)</h3>
+            <p>JavaScript handles asynchronous operations with task queues. Macrotasks include I/O, setTimeout, and
+                setInterval. Microtasks include Promises and async/await.</p>
+            <pre><code>
+// Microtask and macrotask example
+setTimeout(() => {
+    console.log("Macrotask: setTimeout");
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("Microtask: Promise");
+});
+
+console.log("Synchronous: End of script");
+            </code></pre>
+
+            <h3>Event Loop Behavior with Asynchronous Code</h3>
+            <p>The event loop prioritizes executing synchronous code first, then handles microtasks, and finally
+                executes macrotasks.</p>
+        </section>
+
+        <section>
+            <h2>JavaScript Timing Events</h2>
+
+            <h3>setTimeout and clearTimeout</h3>
+            <p>The <code>setTimeout</code> method executes a function after a specified amount of time.
+                <code>clearTimeout</code> is used to stop the timer before it executes.
+            </p>
+            <pre><code>
+// Example: setTimeout and clearTimeout
+let timer = setTimeout(() => {
+    console.log("This will run after 3 seconds");
+}, 3000);
+
+// Cancel the timeout
+clearTimeout(timer);
+            </code></pre>
+
+            <h3>setInterval and clearInterval</h3>
+            <p>The <code>setInterval</code> method repeatedly calls a function at specified intervals.
+                <code>clearInterval</code> is used to stop the repeated execution.
+            </p>
+            <pre><code>
+// Example: setInterval and clearInterval
+let count = 0;
+let interval = setInterval(() => {
+    count++;
+    console.log(`Counter: ${count}`);
+    if (count === 5) {
+        clearInterval(interval); // Stop after 5 seconds
+    }
+}, 1000);
+            </code></pre>
+
+            <h3>Debouncing and Throttling in JavaScript</h3>
+            <p><strong>Debouncing</strong> and <strong>throttling</strong> are techniques used to limit the frequency of
+                function execution. Debouncing delays the function execution until after a period of inactivity, while
+                throttling ensures a function is called at regular intervals.</p>
+            <pre><code>
+// Debouncing example
+function debounce(func, delay) {
+    let timer;
+    return function (...args) {
+        clearTimeout(timer);
+        timer = setTimeout(() => func.apply(this, args), delay);
+    };
+}
+
+// Throttling example
+function throttle(func, limit) {
+    let inThrottle;
+    return function (...args) {
+        if (!inThrottle) {
+            func.apply(this, args);
+            inThrottle = true;
+            setTimeout(() => inThrottle = false, limit);
+        }
+    };
+}
+            </code></pre>
+        </section>
+
+
+        <section>
+            <h2>Regular Expressions (RegEx)</h2>
+
+            <h3>What are Regular Expressions?</h3>
+            <p>Regular expressions, or RegEx, are patterns used to match character combinations in strings. They are
+                powerful for searching and manipulating text.</p>
+
+            <h3>Creating Regular Expressions</h3>
+            <p>You can create regular expressions using either literal syntax or the <code>RegExp</code> constructor.
+            </p>
+            <pre><code>
+// Literal syntax
+let regex1 = /hello/;
+
+// Using RegExp constructor
+let regex2 = new RegExp('hello');
+            </code></pre>
+
+            <h3>Common Regular Expression Patterns</h3>
+            <p>Some common patterns used in RegEx:</p>
+            <ul>
+                <li><code>\d</code>: Matches any digit (0-9).</li>
+                <li><code>\w</code>: Matches any word character (alphanumeric or underscore).</li>
+                <li><code>\s</code>: Matches any whitespace character.</li>
+                <li><code>[a-z]</code>: Matches any lowercase letter.</li>
+                <li><code>^</code>: Matches the beginning of a string.</li>
+                <li><code>$</code>: Matches the end of a string.</li>
+            </ul>
+            <pre><code>
+// Example patterns
+let regex = /\d{3}-\d{2}-\d{4}/; // Matches a Social Security number format (123-45-6789)
+            </code></pre>
+
+            <h3>String Methods with RegEx</h3>
+            <p>JavaScript provides string methods that work with regular expressions.</p>
+
+            <ul>
+                <li><code>match()</code>: Extracts matching parts of a string.</li>
+                <li><code>replace()</code>: Replaces matched substrings with new values.</li>
+                <li><code>test()</code>: Tests if a pattern exists in a string.</li>
+                <li><code>exec()</code>: Executes a search for a match and returns the result.</li>
+            </ul>
+
+            <pre><code>
+// Example of match, replace, test, and exec
+let text = "Hello 123, this is a test.";
+let regex = /\d+/;
+
+console.log(text.match(regex)); // ["123"]
+console.log(text.replace(regex, "456")); // "Hello 456, this is a test."
+console.log(regex.test(text)); // true
+console.log(regex.exec(text)); // ["123"]
+            </code></pre>
+
+            <h3>Flags (g, i, m)</h3>
+            <p>Flags are used to modify the behavior of regular expressions:</p>
+            <ul>
+                <li><code>g</code>: Global search (find all matches).</li>
+                <li><code>i</code>: Case-insensitive search.</li>
+                <li><code>m</code>: Multi-line search.</li>
+            </ul>
+            <pre><code>
+// Using flags
+let regexGlobal = /test/g; // Global search
+let regexCaseInsensitive = /test/i; // Case-insensitive search
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Storage in JavaScript</h2>
+
+            <h3>Cookies</h3>
+            <p>Cookies are small pieces of data stored on the user's browser. You can create, read, and delete cookies
+                using JavaScript.</p>
+
+            <h4>Creating Cookies</h4>
+            <pre><code>
+// Setting a cookie
+document.cookie = "username=John; expires=Fri, 31 Dec 2024 12:00:00 UTC; path=/";
+            </code></pre>
+
+            <h4>Reading Cookies</h4>
+            <pre><code>
+// Reading cookies
+let cookies = document.cookie;
+console.log(cookies);
+            </code></pre>
+
+            <h4>Deleting Cookies</h4>
+            <pre><code>
+// Deleting a cookie
+document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            </code></pre>
+
+            <h3>LocalStorage</h3>
+            <p><code>LocalStorage</code> allows you to store data in the browser that persists even after the browser is
+                closed.</p>
+            <pre><code>
+// Storing data in LocalStorage
+localStorage.setItem('username', 'John');
+
+// Retrieving data from LocalStorage
+let username = localStorage.getItem('username');
+console.log(username); // John
+
+// Removing data from LocalStorage
+localStorage.removeItem('username');
+            </code></pre>
+
+            <h3>SessionStorage</h3>
+            <p><code>SessionStorage</code> is similar to <code>LocalStorage</code>, but the data is only available for
+                the duration of the page session.</p>
+            <pre><code>
+// Storing data in SessionStorage
+sessionStorage.setItem('sessionKey', 'sessionValue');
+
+// Retrieving data from SessionStorage
+let sessionValue = sessionStorage.getItem('sessionKey');
+console.log(sessionValue); // sessionValue
+
+// Removing data from SessionStorage
+sessionStorage.removeItem('sessionKey');
+            </code></pre>
+
+            <h3>Web Storage API</h3>
+            <p>The Web Storage API allows you to interact with <code>LocalStorage</code> and <code>SessionStorage</code>
+                for storing key-value pairs in the browser.</p>
+            <pre><code>
+// Example: Using Web Storage API to store and retrieve data
+if (typeof(Storage) !== "undefined") {
+    // Store data
+    localStorage.setItem("user", "Alice");
+
+    // Retrieve data
+    let user = localStorage.getItem("user");
+    console.log(user); // Alice
+} else {
+    console.log("Web Storage is not supported in this browser.");
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>JSON (JavaScript Object Notation)</h2>
+
+            <h3>What is JSON?</h3>
+            <p>JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to
+                read and write and easy for machines to parse and generate. It is primarily used to transmit data
+                between a server and a web application.</p>
+            <pre><code>
+{
+    "name": "John",
+    "age": 30,
+    "city": "New York"
+}
+            </code></pre>
+
+            <h3>Parsing JSON (JSON.parse)</h3>
+            <p>The <code>JSON.parse()</code> method parses a JSON string, constructing the JavaScript value or object
+                described by the string.</p>
+            <pre><code>
+// Example of parsing JSON
+let jsonString = '{"name": "John", "age": 30, "city": "New York"}';
+let jsonObject = JSON.parse(jsonString);
+console.log(jsonObject.name); // John
+console.log(jsonObject.age);  // 30
+            </code></pre>
+
+            <h3>Converting to JSON (JSON.stringify)</h3>
+            <p>The <code>JSON.stringify()</code> method converts a JavaScript object or value to a JSON string.</p>
+            <pre><code>
+// Example of converting to JSON
+let person = {
+    name: "John",
+    age: 30,
+    city: "New York"
+};
+let jsonString = JSON.stringify(person);
+console.log(jsonString); // '{"name":"John","age":30,"city":"New York"}'
+            </code></pre>
+
+            <h3>Working with JSON in APIs</h3>
+            <p>JSON is commonly used in APIs to send and receive data. You can fetch data from APIs and parse the JSON
+                response.</p>
+            <pre><code>
+// Example of fetching JSON from an API
+fetch('https://api.example.com/data')
+    .then(response => response.json()) // Parse JSON
+    .then(data => console.log(data)) // Handle data
+    .catch(error => console.error('Error:', error));
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>JavaScript Design Patterns</h2>
+
+            <h3>Singleton Pattern</h3>
+            <p>The Singleton pattern restricts a class to a single instance and provides a global access point to that
+                instance.</p>
+            <pre><code>
+const Singleton = (function() {
+    let instance;
+
+    function createInstance() {
+        return new Object("I am the instance");
+    }
+
+    return {
+        getInstance: function() {
+            if (!instance) {
+                instance = createInstance();
+            }
+            return instance;
+        }
+    };
+})();
+
+// Usage
+const instance1 = Singleton.getInstance();
+const instance2 = Singleton.getInstance();
+console.log(instance1 === instance2); // true
+            </code></pre>
+
+            <h3>Module Pattern</h3>
+            <p>The Module pattern is used to create private and public variables and methods in a single object.</p>
+            <pre><code>
+const Module = (function() {
+    let privateVar = "I am private";
+
+    return {
+        publicMethod: function() {
+            console.log(privateVar);
+        }
+    };
+})();
+
+// Usage
+Module.publicMethod(); // "I am private"
+            </code></pre>
+
+            <h3>Factory Pattern</h3>
+            <p>The Factory pattern is used to create objects without specifying the exact class of the object that will
+                be created.</p>
+            <pre><code>
+function Car(make, model) {
+    this.make = make;
+    this.model = model;
+}
+
+function CarFactory() {
+    return {
+        createCar: function(make, model) {
+            return new Car(make, model);
+        }
+    };
+}
+
+// Usage
+const factory = new CarFactory();
+const car1 = factory.createCar('Toyota', 'Corolla');
+console.log(car1.make); // Toyota
+            </code></pre>
+
+            <h3>Observer Pattern</h3>
+            <p>The Observer pattern allows an object (subject) to maintain a list of dependents (observers) that are
+                notified of state changes.</p>
+            <pre><code>
+function Subject() {
+    this.observers = [];
+
+    this.addObserver = function(observer) {
+        this.observers.push(observer);
+    };
+
+    this.notifyObservers = function(data) {
+        this.observers.forEach(observer => observer.update(data));
+    };
+}
+
+function Observer(name) {
+    this.name = name;
+    this.update = function(data) {
+        console.log(`${this.name} received data: ${data}`);
+    };
+}
+
+// Usage
+const subject = new Subject();
+const observer1 = new Observer('Observer 1');
+const observer2 = new Observer('Observer 2');
+
+subject.addObserver(observer1);
+subject.addObserver(observer2);
+subject.notifyObservers('Hello Observers!'); // Observer 1 and Observer 2 receive data
+            </code></pre>
+
+            <h3>Decorator Pattern</h3>
+            <p>The Decorator pattern allows behavior to be added to individual objects, either statically or
+                dynamically, without affecting the behavior of other objects from the same class.</p>
+            <pre><code>
+function Car() {
+    this.cost = function() {
+        return 20000;
+    };
+}
+
+function Decorator(car) {
+    const originalCost = car.cost();
+    car.cost = function() {
+        return originalCost + 5000; // Adding luxury features
+    };
+}
+
+// Usage
+const myCar = new Car();
+console.log(myCar.cost()); // 20000
+Decorator(myCar);
+console.log(myCar.cost()); // 25000
+            </code></pre>
+
+            <h3>Revealing Module Pattern</h3>
+            <p>The Revealing Module pattern exposes certain methods and properties while keeping others private.</p>
+            <pre><code>
+const RevealingModule = (function() {
+    let privateVar = "I am private";
+
+    function privateMethod() {
+        console.log(privateVar);
+    }
+
+    function publicMethod() {
+        privateMethod();
+    }
+
+    return {
+        publicMethod: publicMethod
+    };
+})();
+
+// Usage
+RevealingModule.publicMethod(); // "I am private"
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Functional Programming in JavaScript</h2>
+
+            <h3>Pure Functions</h3>
+            <p>A pure function is a function where the output is only determined by its input values, without observable
+                side effects.</p>
+            <pre><code>
+function add(a, b) {
+    return a + b; // Pure function
+}
+
+console.log(add(2, 3)); // 5
+            </code></pre>
+
+            <h3>Higher-order Functions</h3>
+            <p>Higher-order functions are functions that can take other functions as arguments or return functions as
+                their result.</p>
+            <pre><code>
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+function processUserInput(callback) {
+    const name = "Alice";
+    console.log(callback(name));
+}
+
+processUserInput(greet); // "Hello, Alice!"
+            </code></pre>
+
+            <h3>Immutability</h3>
+            <p>Immutability is the concept of not changing the existing data but instead creating a new data structure
+                with the updated values.</p>
+            <pre><code>
+const originalArray = [1, 2, 3];
+const newArray = [...originalArray, 4]; // Creates a new array
+console.log(originalArray); // [1, 2, 3]
+console.log(newArray); // [1, 2, 3, 4]
+            </code></pre>
+
+            <h3>Recursion</h3>
+            <p>Recursion is a technique where a function calls itself in order to solve a problem. Each recursive call
+                should bring the solution closer to the base case.</p>
+            <pre><code>
+function factorial(n) {
+    if (n <= 1) return 1; // Base case
+    return n * factorial(n - 1); // Recursive case
+}
+
+console.log(factorial(5)); // 120
+            </code></pre>
+
+            <h3>Currying</h3>
+            <p>Currying is the process of transforming a function that takes multiple arguments into a sequence of
+                functions that each take a single argument.</p>
+            <pre><code>
+function multiply(a) {
+    return function(b) {
+        return a * b;
+    };
+}
+
+const double = multiply(2);
+console.log(double(5)); // 10
+            </code></pre>
+
+            <h3>Partial Application</h3>
+            <p>Partial application is the process of fixing a number of arguments to a function, producing another
+                function of smaller arity.</p>
+            <pre><code>
+function add(a, b) {
+    return a + b;
+}
+
+function partialAdd(a) {
+    return function(b) {
+        return add(a, b);
+    };
+}
+
+const addFive = partialAdd(5);
+console.log(addFive(10)); // 15
+            </code></pre>
+
+            <h3>Composition</h3>
+            <p>Function composition is the process of combining two or more functions to produce a new function.</p>
+            <pre><code>
+const compose = (f, g) => (x) => f(g(x));
+
+const double = (x) => x * 2;
+const square = (x) => x * x;
+
+const doubleThenSquare = compose(square, double);
+console.log(doubleThenSquare(3)); // 36 (double 3 to get 6, then square 6)
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>JavaScript Best Practices</h2>
+
+            <h3>Variable Naming Conventions</h3>
+            <p>Use clear and descriptive variable names. Use camelCase for variable names and PascalCase for class
+                names.</p>
+            <pre><code>
+let userName = "Alice"; // camelCase
+class Person { // PascalCase
+    constructor(name) {
+        this.name = name;
+    }
+}
+            </code></pre>
+
+            <h3>Code Modularity</h3>
+            <p>Keep your code organized by separating it into modules. This makes it easier to maintain and understand.
+            </p>
+            <pre><code>
+// Example of module in ES6
+export function add(a, b) {
+    return a + b;
+}
+
+// Importing the module
+import { add } from './math.js';
+            </code></pre>
+
+            <h3>Avoiding Global Variables</h3>
+            <p>Global variables can lead to conflicts and bugs. Encapsulate your code in functions or modules to limit
+                the scope of variables.</p>
+            <pre><code>
+(function() {
+    let localVar = "I am local"; // Local scope
+    console.log(localVar);
+})();
+            </code></pre>
+
+            <h3>Avoiding eval() and with</h3>
+            <p>Avoid using <code>eval()</code> as it can execute arbitrary code and lead to security risks. Avoid using
+                <code>with</code> as it can make code harder to read.
+            </p>
+            <pre><code>
+// Avoid this
+let result = eval("2 + 2"); // Use alternative ways to compute
+
+// Avoid this
+with (Math) {
+    let area = PI * radius * radius; // Makes it unclear where variables come from
+}
+            </code></pre>
+
+            <h3>Strict Mode ('use strict')</h3>
+            <p>Using strict mode helps catch common coding mistakes and prevents the use of unsafe actions.</p>
+            <pre><code>
+"use strict";
+
+function myFunction() {
+    x = 3.14; // ReferenceError: x is not defined
+}
+            </code></pre>
+
+            <h3>Writing DRY (Don't Repeat Yourself) Code</h3>
+            <p>Follow the DRY principle to reduce redundancy. Create reusable functions and modules instead of repeating
+                code.</p>
+            <pre><code>
+function calculateArea(width, height) {
+    return width * height;
+}
+
+const area1 = calculateArea(5, 10);
+const area2 = calculateArea(7, 3); // Reuse the function
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>ES6+ Features</h2>
+
+            <h3>Arrow Functions</h3>
+            <p>Arrow functions provide a more concise syntax for writing function expressions. They also lexically bind
+                the <code>this</code> value.</p>
+            <pre><code>
+const add = (a, b) => a + b;
+console.log(add(2, 3)); // 5
+            </code></pre>
+
+            <h3>Template Literals</h3>
+            <p>Template literals allow for easier string interpolation and multi-line strings using backticks.</p>
+            <pre><code>
+const name = "Alice";
+const greeting = `Hello, ${name}!`;
+console.log(greeting); // Hello, Alice!
+            </code></pre>
+
+            <h3>Destructuring (Arrays, Objects)</h3>
+            <p>Destructuring allows unpacking values from arrays or properties from objects into distinct variables.</p>
+            <pre><code>
+// Array Destructuring
+const numbers = [1, 2, 3];
+const [a, b] = numbers;
+console.log(a, b); // 1, 2
+
+// Object Destructuring
+const person = { name: "Alice", age: 25 };
+const { name, age } = person;
+console.log(name, age); // Alice, 25
+            </code></pre>
+
+            <h3>Spread/Rest Operator (...)</h3>
+            <p>The spread operator allows an iterable (like an array) to be expanded in places where multiple elements
+                are expected. The rest operator allows collecting multiple elements into an array.</p>
+            <pre><code>
+// Spread Operator
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+const combined = [...arr1, ...arr2];
+console.log(combined); // [1, 2, 3, 4]
+
+// Rest Operator
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+console.log(sum(1, 2, 3)); // 6
+            </code></pre>
+
+            <h3>Default Parameters</h3>
+            <p>Default parameters allow named parameters to be initialized with default values if no value or
+                <code>undefined</code> is passed.
+            </p>
+            <pre><code>
+function multiply(a, b = 1) {
+    return a * b;
+}
+console.log(multiply(5)); // 5
+            </code></pre>
+
+            <h3>Classes and Inheritance</h3>
+            <p>ES6 introduced classes, a syntactical sugar over JavaScript's existing prototype-based inheritance.</p>
+            <pre><code>
+class Animal {
+    constructor(name) {
+        this.name = name;
+    }
+
+    speak() {
+        console.log(`${this.name} makes a noise.`);
+    }
+}
+
+class Dog extends Animal {
+    speak() {
+        console.log(`${this.name} barks.`);
+    }
+}
+
+const dog = new Dog("Rover");
+dog.speak(); // Rover barks.
+            </code></pre>
+
+            <h3>let, const, and Block Scoping</h3>
+            <p><code>let</code> and <code>const</code> provide block scoping, allowing variables to be confined to the
+                block in which they are defined.</p>
+            <pre><code>
+if (true) {
+    let x = 10;
+    const y = 20;
+    console.log(x, y); // 10, 20
+}
+// console.log(x); // ReferenceError: x is not defined
+// console.log(y); // ReferenceError: y is not defined
+            </code></pre>
+
+            <h3>Map and Set Objects</h3>
+            <p><code>Map</code> and <code>Set</code> are new data structures introduced in ES6. <code>Map</code> holds
+                key-value pairs, and <code>Set</code> holds unique values.</p>
+            <pre><code>
+// Map
+const map = new Map();
+map.set('name', 'Alice');
+map.set('age', 25);
+console.log(map.get('name')); // Alice
+
+// Set
+const set = new Set();
+set.add(1);
+set.add(2);
+set.add(1); // Duplicate value, will not be added
+console.log(set.size); // 2
+            </code></pre>
+
+            <h3>Promises</h3>
+            <p>Promises are used for asynchronous operations, representing the eventual completion (or failure) of an
+                asynchronous operation and its resulting value.</p>
+            <pre><code>
+const myPromise = new Promise((resolve, reject) => {
+    const success = true;
+    if (success) {
+        resolve("Operation succeeded!");
+    } else {
+        reject("Operation failed!");
+    }
+});
+
+myPromise
+    .then(result => console.log(result)) // Operation succeeded!
+    .catch(error => console.error(error));
+            </code></pre>
+
+            <h3>Modules (import, export)</h3>
+            <p>ES6 introduced a module system, allowing developers to split code into separate files, with
+                <code>import</code> and <code>export</code> keywords.
+            </p>
+            <pre><code>
+// Exporting
+export const pi = 3.14;
+export function add(a, b) {
+    return a + b;
+}
+
+// Importing
+import { pi, add } from './math.js';
+console.log(pi); // 3.14
+console.log(add(2, 3)); // 5
+            </code></pre>
+
+            <h3>Generators</h3>
+            <p>Generators are functions that can be paused and resumed, allowing for the creation of iterators. They use
+                the <code>function* </code> syntax and the <code>yield</code> keyword.</p>
+            <pre><code>
+function* generatorFunction() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const gen = generatorFunction();
+console.log(gen.next().value); // 1
+console.log(gen.next().value); // 2
+console.log(gen.next().value); // 3
+            </code></pre>
+
+            <h3>Symbol and for...of Loop</h3>
+            <p>Symbols are unique and immutable data types, often used as object property keys. The
+                <code>for...of</code> loop allows iterating over iterable objects like arrays and strings.
+            </p>
+            <pre><code>
+// Using Symbol
+const mySymbol = Symbol('description');
+console.log(mySymbol); // Symbol(description)
+
+// for...of Loop
+const iterableArray = ['a', 'b', 'c'];
+for (const value of iterableArray) {
+    console.log(value); // a, b, c
+}
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Advanced Topics</h2>
+
+            <h3>Proxy and Reflect API</h3>
+            <p>The <code>Proxy</code> object allows you to create a proxy for another object, enabling you to intercept
+                and redefine fundamental operations for that object (e.g., property lookup, assignment, enumeration,
+                function invocation, etc.). The <code>Reflect</code> API provides methods for interceptable JavaScript
+                operations.</p>
+            <pre><code>
+const target = {
+    message: "Hello, World!"
+};
+
+const handler = {
+    get: function(target, prop) {
+        return prop in target ? target[prop] : "Property does not exist";
+    }
+};
+
+const proxy = new Proxy(target, handler);
+console.log(proxy.message); // Hello, World!
+console.log(proxy.nonExistent); // Property does not exist
+            </code></pre>
+
+            <h3>WeakMap and WeakSet</h3>
+            <p><code>WeakMap</code> is a collection of key-value pairs where keys are objects and values can be any
+                value. The keys in a <code>WeakMap</code> are weakly referenced, meaning they can be garbage collected
+                if there are no other references to the key. <code>WeakSet</code> is similar, but it only holds objects
+                and prevents them from being garbage collected as long as they are still in the set.</p>
+            <pre><code>
+const weakMap = new WeakMap();
+const objKey = {};
+weakMap.set(objKey, "value");
+
+console.log(weakMap.get(objKey)); // value
+// objKey will be garbage collected if there are no other references to it
+            </code></pre>
+
+            <h3>Iterators and Generators</h3>
+            <p>Iterators are objects that implement the iterator protocol, providing a <code>next()</code> method that
+                returns an object with <code>value</code> and <code>done</code> properties. Generators are functions
+                that can be paused and resumed, using the <code>*</code> syntax and <code>yield</code> keyword, allowing
+                the creation of custom iterators.</p>
+            <pre><code>
+function* numberGenerator() {
+    yield 1;
+    yield 2;
+    yield 3;
+}
+
+const iterator = numberGenerator();
+console.log(iterator.next().value); // 1
+console.log(iterator.next().value); // 2
+console.log(iterator.next().value); // 3
+            </code></pre>
+
+            <h3>Memoization</h3>
+            <p>Memoization is an optimization technique used primarily to speed up function calls by caching previously
+                computed results based on the function's arguments.</p>
+            <pre><code>
+function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+        const key = JSON.stringify(args);
+        if (cache[key]) {
+            return cache[key];
+        }
+        const result = fn(...args);
+        cache[key] = result;
+        return result;
+    };
+}
+
+const fibonacci = memoize(n => {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+});
+
+console.log(fibonacci(10)); // 55
+            </code></pre>
+
+            <h3>Event-driven Architecture</h3>
+            <p>Event-driven architecture is a software architecture paradigm promoting the production, detection,
+                consumption of, and reaction to events. In JavaScript, it is commonly implemented with event listeners
+                and callback functions.</p>
+            <pre><code>
+document.addEventListener('click', function(event) {
+    console.log('Document clicked:', event);
+});
+            </code></pre>
+
+            <h3>Web Workers and Multi-threading in JavaScript</h3>
+            <p>Web Workers allow you to run JavaScript scripts in background threads, enabling concurrent execution and
+                preventing UI blocking. This is particularly useful for heavy computational tasks.</p>
+            <pre><code>
+// worker.js
+self.onmessage = function(event) {
+    const result = event.data * 2; // Perform heavy calculations
+    self.postMessage(result);
+};
+
+// main.js
+const worker = new Worker('worker.js');
+worker.onmessage = function(event) {
+    console.log('Result from worker:', event.data);
+};
+worker.postMessage(10); // Sends data to the worker
+            </code></pre>
+
+            <h3>WebSockets (Real-time Communication)</h3>
+            <p>WebSockets provide a full-duplex communication channel over a single TCP connection, enabling real-time
+                data exchange between clients and servers.</p>
+            <pre><code>
+const socket = new WebSocket('ws://example.com/socket');
+
+socket.onopen = function() {
+    console.log('WebSocket connection established');
+    socket.send('Hello Server!');
+};
+
+socket.onmessage = function(event) {
+    console.log('Message from server:', event.data);
+};
+            </code></pre>
+
+            <h3>Service Workers (Background Tasks and Caching)</h3>
+            <p>Service workers act as a proxy between web applications and the network, allowing you to intercept
+                network requests, cache responses, and provide offline functionality.</p>
+            <pre><code>
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+    }).catch(function(error) {
+        console.error('Service Worker registration failed:', error);
+    });
+}
+            </code></pre>
+
+            <h3>Progressive Web Apps (PWAs)</h3>
+            <p>Progressive Web Apps are web applications that leverage modern web capabilities to deliver an app-like
+                experience. They can work offline, send push notifications, and be installed on a user's device.</p>
+            <pre><code>
+// Example of a service worker to cache assets for a PWA
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open('my-cache').then(cache => {
+            return cache.addAll(['/', '/index.html', '/styles.css']);
+        })
+    );
+});
+            </code></pre>
+
+            <h3>Shadow DOM (Web Components)</h3>
+            <p>The Shadow DOM allows you to encapsulate styles and markup in a web component, preventing styles from
+                leaking in or out of the component.</p>
+            <pre><code>
+class MyElement extends HTMLElement {
+    constructor() {
+        super();
+        const shadow = this.attachShadow({ mode: 'open' });
+        shadow.innerHTML = `<style>h1 { color: blue; }</style><h1>Hello Shadow DOM!</h1>`;
+    }
+}
+
+customElements.define('my-element', MyElement);
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Working with APIs</h2>
+
+            <h3>Understanding REST APIs</h3>
+            <p>REST (Representational State Transfer) APIs are web services that adhere to REST principles, using HTTP
+                requests to perform CRUD (Create, Read, Update, Delete) operations. They typically return data in JSON
+                format.</p>
+            <pre><code>
+GET /users
+POST /users
+PUT /users/1
+DELETE /users/1
+            </code></pre>
+
+            <h3>Fetch API and Sending HTTP Requests</h3>
+            <p>The Fetch API provides a modern way to make HTTP requests in JavaScript. It returns a promise that
+                resolves to the Response object representing the response to the request.</p>
+            <pre><code>
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+            </code></pre>
+
+            <h3>Handling JSON Responses</h3>
+            <p>To work with JSON data returned from an API, you can use the <code>response.json()</code> method, which
+                parses the JSON and returns a promise.</p>
+            <pre><code>
+fetch('https://api.example.com/data')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+            </code></pre>
+
+            <h3>XMLHttpRequest</h3>
+            <p><code>XMLHttpRequest</code> is an older way to make HTTP requests in JavaScript. It is less convenient
+                than the Fetch API but still widely used.</p>
+            <pre><code>
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+        console.log(JSON.parse(xhr.responseText));
+    } else {
+        console.error('Request failed:', xhr.statusText);
+    }
+};
+xhr.send();
+            </code></pre>
+
+            <h3>API Authentication (JWT, OAuth)</h3>
+            <p>API authentication can be implemented using JSON Web Tokens (JWT) or OAuth. JWT is a compact, URL-safe
+                means of representing claims to be transferred between two parties.</p>
+            <pre><code>
+// Example of a JWT token structure
+const token = 'header.payload.signature';
+            </code></pre>
+            <p>OAuth is an open standard for access delegation commonly used as a way to grant websites or applications
+                limited access to user information without exposing passwords.</p>
+
+            <h3>Third-party APIs (Google Maps API, OpenWeatherMap API, etc.)</h3>
+            <p>Third-party APIs allow developers to integrate external services into their applications. Examples
+                include:</p>
+            <ul>
+                <li><strong>Google Maps API:</strong> Provides functionality for embedding Google Maps.</li>
+                <li><strong>OpenWeatherMap API:</strong> Allows access to weather data for various locations.</li>
+            </ul>
+            <pre><code>
+// Example using OpenWeatherMap API
+fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY')
+    .then(response => response.json())
+    .then(data => console.log(data));
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Working with APIs</h2>
+
+            <h3>Understanding REST APIs</h3>
+            <p>REST (Representational State Transfer) APIs are web services that adhere to REST principles, using HTTP
+                requests to perform CRUD (Create, Read, Update, Delete) operations. They typically return data in JSON
+                format.</p>
+            <pre><code>
+GET /users
+POST /users
+PUT /users/1
+DELETE /users/1
+            </code></pre>
+
+            <h3>Fetch API and Sending HTTP Requests</h3>
+            <p>The Fetch API provides a modern way to make HTTP requests in JavaScript. It returns a promise that
+                resolves to the Response object representing the response to the request.</p>
+            <pre><code>
+fetch('https://api.example.com/data')
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+            </code></pre>
+
+            <h3>Handling JSON Responses</h3>
+            <p>To work with JSON data returned from an API, you can use the <code>response.json()</code> method, which
+                parses the JSON and returns a promise.</p>
+            <pre><code>
+fetch('https://api.example.com/data')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+            </code></pre>
+
+            <h3>XMLHttpRequest</h3>
+            <p><code>XMLHttpRequest</code> is an older way to make HTTP requests in JavaScript. It is less convenient
+                than the Fetch API but still widely used.</p>
+            <pre><code>
+const xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onload = function() {
+    if (xhr.status >= 200 && xhr.status < 300) {
+        console.log(JSON.parse(xhr.responseText));
+    } else {
+        console.error('Request failed:', xhr.statusText);
+    }
+};
+xhr.send();
+            </code></pre>
+
+            <h3>API Authentication (JWT, OAuth)</h3>
+            <p>API authentication can be implemented using JSON Web Tokens (JWT) or OAuth. JWT is a compact, URL-safe
+                means of representing claims to be transferred between two parties.</p>
+            <pre><code>
+// Example of a JWT token structure
+const token = 'header.payload.signature';
+            </code></pre>
+            <p>OAuth is an open standard for access delegation commonly used as a way to grant websites or applications
+                limited access to user information without exposing passwords.</p>
+
+            <h3>Third-party APIs (Google Maps API, OpenWeatherMap API, etc.)</h3>
+            <p>Third-party APIs allow developers to integrate external services into their applications. Examples
+                include:</p>
+            <ul>
+                <li><strong>Google Maps API:</strong> Provides functionality for embedding Google Maps.</li>
+                <li><strong>OpenWeatherMap API:</strong> Allows access to weather data for various locations.</li>
+            </ul>
+            <pre><code>
+// Example using OpenWeatherMap API
+fetch('https://api.openweathermap.org/data/2.5/weather?q=London&appid=YOUR_API_KEY')
+    .then(response => response.json())
+    .then(data => console.log(data));
+            </code></pre>
+        </section>
+
+        <section>
+            <h2>Frontend Frameworks and Libraries</h2>
+
+            <h3>React.js</h3>
+            <p>React.js is a JavaScript library for building user interfaces. It uses components, hooks, and state
+                management to create interactive web applications.</p>
+            <!-- <pre><code>
+import React, { useState } from 'react';
+
+function App() {
+    const [count, setCount] = useState(0);
+    
+    return (
+        <div>
+            <p>You clicked {count} times</p>
+            <button onClick={() => setCount(count + 1)}>Click me</button>
+        </div>
+    );
+}
+            </code></pre> -->
+
+            <h3>Vue.js</h3>
+            <p>Vue.js is a progressive framework for building user interfaces. It provides directives, components, Vue
+                Router for navigation, and Vuex for state management.</p>
+            <pre><code>
+<template>
+  <div>
+    <h1>{{ message }}</h1>
+  </div>
+</template>
+
+<script>
+    export default {
+        data() {
+            return {
+                message: 'Hello Vue!'
+            }
+        }
+    }
+</script>
+            </code></pre>
+
+            <h3>Angular</h3>
+            <p>Angular is a platform and framework for building single-page client applications using HTML and
+                TypeScript. It offers modules, services, dependency injection, and routing.</p>
+            <pre><code>
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+
+@NgModule({
+  declarations: [AppComponent],
+  imports: [BrowserModule],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+            </code></pre>
+
+            <h3>jQuery</h3>
+            <p>jQuery is a fast, small, and feature-rich JavaScript library. It simplifies DOM manipulation, event
+                handling, and AJAX.</p>
+            <pre><code>
+$(document).ready(function() {
+    $('#myButton').click(function() {
+        alert('Button clicked!');
+    });
+});
+            </code></pre>
+        </section>
+    </main>
+    <div class="homePage"></div>
+    <a href="index.html"> <button class="home">HOME</button></a>
+    </div>
+    <footer>
+        <p>&copy; <span id="year"></span> Learning Platform</p>
+    </footer>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
